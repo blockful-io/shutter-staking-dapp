@@ -1,6 +1,7 @@
 import "@rainbow-me/rainbowkit/styles.css";
+import "@/pages/styles/globals.css";
+import "@/pages/styles/output.css";
 import "tailwindcss/tailwind.css";
-import "./styles/output.css";
 
 import {
   getSiweMessageOptions,

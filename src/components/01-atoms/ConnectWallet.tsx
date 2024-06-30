@@ -19,6 +19,7 @@ export const ConnectWallet = () => {
         if (!connected) {
           return (
             <button
+              className="text-white"
               onClick={(e: any) => {
                 openConnectModal();
                 e.preventDefault();
