@@ -1,4 +1,4 @@
-import { ShutterCurrencySymbol } from "@/components/01-atoms";
+import { ShutterCurrencySymbol } from "@/components/atoms";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta = {

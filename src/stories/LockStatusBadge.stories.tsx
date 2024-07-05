@@ -1,4 +1,4 @@
-import { LockStatus, LockStatusBadge } from "@/components/01-atoms";
+import { LockStatus, LockStatusBadge } from "@/components/atoms";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
