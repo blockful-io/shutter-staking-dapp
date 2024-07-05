@@ -6,7 +6,7 @@ export const UserDropdown = () => {
   return (
     <div className="flex items-center justify-center gap-2.5">
       <div className=" h-6 w-6 rounded-full" />
-      <p className="text-base font-bold text-black">
+      <p className="text-base font-bold text-white">
         {authedUser?.slice(0, 6) + "..." + authedUser?.slice(-4)}
       </p>
     </div>
