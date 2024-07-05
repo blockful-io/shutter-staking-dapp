@@ -9,6 +9,7 @@ import {
   WalletIcon,
   NumberValue,
 } from "@/components/atoms";
+import { DateComponent } from "@/components/atoms/DateComponent";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default function Home() {
       ])}
     >
       <CardTemplate>
+        <DateComponent />
         <div className="h-full p-[28px] flex flex-col justify-between">
           <WalletIcon />
           <div className="flex flex-col">
