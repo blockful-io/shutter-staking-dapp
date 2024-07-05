@@ -6,8 +6,9 @@ interface SymbolProps {
 }
 
 export enum ShutterCurrencySymbolStyle {
-  Primary = "text-primary font-dm",
-  Secondary = "text-secondary font-dm",
+  HighlightedPrimary = "text-primary font-dm",
+  RegularPrimary = "text-secondary font-bold",
+  RegularSecondary = "text-secondary font-dm",
 }
 
 export enum ShutterCurrencySymbolSize {
@@ -17,7 +18,7 @@ export enum ShutterCurrencySymbolSize {
 
 export const ShutterCurrencySymbol = ({
   size = ShutterCurrencySymbolSize.Small,
-  style = ShutterCurrencySymbolStyle.Primary,
+  style = ShutterCurrencySymbolStyle.RegularPrimary,
 }: SymbolProps) => {
   return (
     <p className={cc(["text-sm text-white font-bold font-dm", size, style])}>
