@@ -1,6 +1,5 @@
 import "@rainbow-me/rainbowkit/styles.css";
-import "@/pages/styles/globals.css";
-import "@/pages/styles/output.css";
+import "@/styles/globals.css";
 import "tailwindcss/tailwind.css";
 
 import {
