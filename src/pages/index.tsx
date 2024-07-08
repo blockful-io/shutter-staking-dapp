@@ -24,7 +24,7 @@ export default function Home() {
         <div className="h-full p-[28px] flex flex-col justify-between">
           <WalletIcon />
           <div className="flex flex-col">
-            <div className="mt-5 text-base font-regular font-dm text-white">
+            <div className="mt-5 bg-pink-500 text-base font-regular font-dm text-white">
               Wallet Balance
             </div>
             <div className="flex space-x-1 items-end mt-1">
