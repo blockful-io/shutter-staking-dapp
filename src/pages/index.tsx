@@ -13,6 +13,7 @@ import {
   TrophyIcon,
   WalletIcon,
 } from "@/components";
+import { StakingTable } from "@/components/StakingTable";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,7 +26,7 @@ export default function Home() {
       ])}
     >
       <div className="w-full grid grid-cols-2 gap-4">
-        <CardTemplate className="w-full">
+        <CardTemplate className="w-full flex flex-col">
           <div className="grid grid-cols-2 p-6 w-full h-full gap-4">
             <div className="w-full h-full gap-3 flex flex-col items-start justify-center">
               <p className="text-base font-medium font-dm">Staked Balance</p>
@@ -55,7 +56,9 @@ export default function Home() {
               />
             </div>
           </div>
+          <StakingTable />
         </CardTemplate>
+
         <div className="grid grid-cols-2 w-full gap-4">
           <CardTemplate>
             <div className="h-full p-[28px] flex flex-col justify-between">
