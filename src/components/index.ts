@@ -1,1 +1,1 @@
-export * from "./01-atoms";
+export * from "./atoms";

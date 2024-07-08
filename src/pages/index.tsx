@@ -1,4 +1,4 @@
-import { NumberValue } from "@/components/01-atoms/NumberValue";
+import { NumberValue } from "@/components/atoms/NumberValue";
 import { Inter } from "next/font/google";
 import cc from "classcat";
 import {
