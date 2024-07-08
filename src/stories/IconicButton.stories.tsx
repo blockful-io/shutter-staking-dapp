@@ -3,7 +3,7 @@ import {
   IconPosition,
   IconicButton,
   PlusIcon,
-} from "@/components/01-atoms";
+} from "@/components/atoms";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta = {

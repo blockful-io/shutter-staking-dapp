@@ -1,7 +1,3 @@
-import {
-  NumberDisplayStyle,
-  NumberValue,
-} from "@/components/01-atoms/NumberValue";
 import { Inter } from "next/font/google";
 import cc from "classcat";
 import {
@@ -11,6 +7,8 @@ import {
   CardTemplate,
   IconicButton,
   IconPosition,
+  NumberDisplayStyle,
+  NumberValue,
   ShutterCurrencySymbol,
   TrophyIcon,
   WalletIcon,
