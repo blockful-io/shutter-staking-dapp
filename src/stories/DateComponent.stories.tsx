@@ -23,7 +23,7 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const DefaultDate: Story = {
+export const NowDate: Story = {
   args: {
     timestamp: Date.now(),
   },
