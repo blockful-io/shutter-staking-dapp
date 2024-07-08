@@ -10,10 +10,10 @@ import {
   NumberDisplayStyle,
   NumberValue,
   ShutterCurrencySymbol,
+  StakingTable,
   TrophyIcon,
   WalletIcon,
 } from "@/components";
-import { StakingTable } from "@/components/StakingTable";
 
 const inter = Inter({ subsets: ["latin"] });
 

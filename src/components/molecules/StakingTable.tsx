@@ -1,6 +1,9 @@
-import { LockStatus, LockStatusBadge } from "./atoms";
+import { LockStatus } from "../atoms";
 import { StakingTableHead } from "./StakingTableHead";
-import { StakingTableRow, StakingTableRowProps } from "./StakingTableRow";
+import {
+  StakingTableRow,
+  StakingTableRowProps,
+} from "../organisms/StakingTableRow";
 
 const defaultRows: StakingTableRowProps[] = [
   {
