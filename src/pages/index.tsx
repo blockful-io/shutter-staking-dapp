@@ -9,6 +9,7 @@ import {
   ArrowUp,
   CardTemplate,
   IconicButton,
+  IconPosition,
   ShutterCurrencySymbol,
   TrophyIcon,
   WalletIcon,
@@ -25,8 +26,8 @@ export default function Home() {
         inter.className,
       ])}
     >
-      <div className="w-full grid grid-cols-2 gap-4">
-        <CardTemplate className="w-full flex flex-col">
+      <div className="w-full grow grid grid-cols-2 gap-4 h-full ">
+        <CardTemplate className="w-full flex flex-col h-full overflow-hidden">
           <div className="grid grid-cols-2 p-6 w-full h-full gap-4">
             <div className="w-full h-full gap-3 flex flex-col items-start justify-center">
               <p className="text-base font-medium font-dm">Staked Balance</p>
@@ -56,7 +57,16 @@ export default function Home() {
               />
             </div>
           </div>
-          <StakingTable />
+          <div className="min-h-[500px]">
+            <StakingTable />
+          </div>
+          <IconicButton
+            className="rounded-none"
+            iconPosition={IconPosition.RIGHT}
+            icon={<ArrowDown />}
+            label={"UNSTAKE"}
+            onClick={() => alert("Execute unstake action")}
+          />
         </CardTemplate>
 
         <div className="grid grid-cols-2 w-full gap-4">
