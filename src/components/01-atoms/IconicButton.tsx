@@ -22,7 +22,7 @@ export const IconicButton = ({
     <button
       {...props}
       onClick={onClick}
-      className="flex space-x-3 items-center justify-center gap-2 px-4 py-2 text-sm font-bold text-white bg-secondary border border-primary rounded-md hover:bg-primary transition"
+      className="flex w-full space-x-3 items-center justify-center gap-2 px-4 py-2 text-sm font-bold text-white bg-secondary border border-primary rounded-md hover:bg-primary transition"
     >
       {iconPosition === IconPosition.LEFT && icon}
       {label}

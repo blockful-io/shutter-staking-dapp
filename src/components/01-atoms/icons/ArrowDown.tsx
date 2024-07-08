@@ -1,6 +1,6 @@
 const DEFAULT_COLOR = "#D4ED7A";
 
-export const ArrowIcon = ({ fill = DEFAULT_COLOR }) => {
+export const ArrowDown = ({ fill = DEFAULT_COLOR }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
