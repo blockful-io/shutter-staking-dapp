@@ -18,7 +18,7 @@ import { Inter } from "next/font/google";
 
 import { Session } from "next-auth";
 import { Toaster } from "react-hot-toast";
-import { DappHeader } from "@/components/atoms";
+import { DappHeader } from "@/components";
 
 const inter = Inter({ subsets: ["latin"] });
 

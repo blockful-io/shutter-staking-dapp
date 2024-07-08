@@ -1,5 +1,4 @@
 export * from "./ConnectWallet";
-export * from "./DappHeader";
 export * from "./NumberValue";
 export * from "./IconicButton";
 export * from "./ShutterCurrencySymbol";
