@@ -22,7 +22,6 @@ export default function Home() {
       ])}
     >
       <CardTemplate>
-        <DateComponent />
         <div className="h-full p-[28px] flex flex-col justify-between">
           <WalletIcon />
           <div className="flex flex-col">

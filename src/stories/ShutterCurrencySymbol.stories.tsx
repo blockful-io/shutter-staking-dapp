@@ -22,20 +22,26 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const SmallRegularPrimary: Story = {
+export const RegularPrimary: Story = {
   args: {
     style: ShutterCurrencySymbolStyle.RegularPrimary,
   },
 };
 
-export const BigHighlightedPrimary: Story = {
+export const HighlightedPrimary: Story = {
   args: {
-    style: ShutterCurrencySymbolStyle.RegularPrimary,
+    style: ShutterCurrencySymbolStyle.HighlightedPrimary,
   },
 };
 
-export const BigRegularPrimary: Story = {
+export const RegularSecondary: Story = {
   args: {
     style: ShutterCurrencySymbolStyle.RegularSecondary,
+  },
+};
+
+export const HighlightedSecondary: Story = {
+  args: {
+    style: ShutterCurrencySymbolStyle.HighlightedSecondary,
   },
 };
