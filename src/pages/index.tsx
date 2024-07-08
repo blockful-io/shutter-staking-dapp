@@ -9,7 +9,6 @@ import {
   WalletIcon,
   NumberValue,
 } from "@/components/atoms";
-import { DateComponent } from "@/components/atoms/DateComponent";
 
 const inter = Inter({ subsets: ["latin"] });
 

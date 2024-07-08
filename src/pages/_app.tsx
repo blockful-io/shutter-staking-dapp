@@ -1,6 +1,5 @@
 import "@rainbow-me/rainbowkit/styles.css";
-import "@/pages/styles/globals.css";
-import "@/pages/styles/output.css";
+import "@/styles/globals.css";
 import "tailwindcss/tailwind.css";
 
 import {
@@ -19,7 +18,7 @@ import { Inter } from "next/font/google";
 
 import { Session } from "next-auth";
 import { Toaster } from "react-hot-toast";
-import { DappHeader } from "@/components/atoms";
+import { DappHeader } from "@/components/organisms";
 
 const inter = Inter({ subsets: ["latin"] });
 

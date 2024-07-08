@@ -1,8 +1,6 @@
-import {
-  ShutterCurrencySymbol,
-  ShutterCurrencySymbolStyle,
-} from "@/components";
+import { ShutterCurrencySymbolStyle } from "@/components";
 import { Meta, StoryObj } from "@storybook/react";
+import { ShutterCurrencySymbol } from "@/components/atoms";
 
 const meta: Meta<typeof ShutterCurrencySymbol> = {
   title: "Shutter/ShutterCurrencySymbol",
