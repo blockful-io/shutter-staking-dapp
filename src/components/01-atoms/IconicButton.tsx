@@ -32,7 +32,7 @@ export const IconicButton = ({
       ])}
     >
       {icon}
-      {label}
+      {label.toUpperCase()}
     </button>
   );
 };

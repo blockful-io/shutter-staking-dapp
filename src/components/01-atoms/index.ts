@@ -9,5 +9,6 @@ export * from "./CardTemplate";
 export * from "./icons/WalletIcon";
 export * from "./icons/ArrowDown";
 export * from "./icons/ArrowUp";
+export * from "./icons/ArrowRight";
 export * from "./icons/PlusIcon";
 export * from "./icons/TrophyIcon";

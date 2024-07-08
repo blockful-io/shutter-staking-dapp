@@ -10,7 +10,7 @@ export const CardTemplate: React.FC<CardTemplateProps> = ({
 }) => {
   return (
     <div
-      className={cc(["h-full border border-primary rounded-lg", className])}
+      className={cc(["border border-primary rounded-lg", className])}
       {...rest}
     >
       {children}
