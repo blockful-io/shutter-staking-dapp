@@ -1,6 +1,7 @@
 import type { Preview } from "@storybook/react";
 import "@/styles/globals.css";
 import "tailwindcss/tailwind.css";
+import "@rainbow-me/rainbowkit/styles.css";
 import { withWagmiProvider } from "./decorators";
 
 const preview: Preview = {

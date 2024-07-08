@@ -20,7 +20,7 @@ export const DappHeader = () => {
         <HeaderLink href="" label="Forum" />
       </div>
 
-      <ConnectWallet />
+      {/* <ConnectWallet /> */}
     </div>
   );
 };

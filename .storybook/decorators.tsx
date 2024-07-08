@@ -5,6 +5,7 @@ import {
   queryClient,
   wagmiConfig,
 } from "../src/lib/wallet/wallet-config";
+import "@rainbow-me/rainbowkit/styles.css";
 import { SessionProvider } from "next-auth/react";
 import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { QueryClientProvider } from "@tanstack/react-query";
