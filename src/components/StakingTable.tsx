@@ -1,4 +1,4 @@
-import { LockStatus, LockStatusBadge } from "./01-atoms";
+import { LockStatus, LockStatusBadge } from "./atoms";
 import { StakingTableHead } from "./StakingTableHead";
 import { StakingTableRow, StakingTableRowProps } from "./StakingTableRow";
 

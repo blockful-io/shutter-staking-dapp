@@ -4,7 +4,7 @@ import {
   NumberDisplaySize,
   NumberDisplayStyle,
   NumberValue,
-} from "./01-atoms";
+} from "./atoms";
 
 export interface StakingTableRowProps {
   index?: number;
