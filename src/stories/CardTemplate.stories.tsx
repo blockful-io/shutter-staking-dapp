@@ -1,12 +1,11 @@
 import {
-  LockStatus,
   CardTemplate,
   NumberValue,
   ShutterCurrencySymbol,
   WalletIcon,
   IconicButton,
-  ArrowIcon,
   TrophyIcon,
+  ArrowDown,
 } from "@/components/01-atoms";
 import type { Meta, StoryObj } from "@storybook/react";
 
@@ -59,7 +58,7 @@ export const CardWithButton: Story = {
           <ShutterCurrencySymbol />
         </div>
         <IconicButton
-          icon={<ArrowIcon />}
+          icon={<ArrowDown />}
           label={"CLAIM"}
           onClick={() => alert("Execute claim action")}
         />
