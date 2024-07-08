@@ -1,4 +1,3 @@
-import { NumberValue } from "@/components/atoms/NumberValue";
 import { Inter } from "next/font/google";
 import cc from "classcat";
 import {
@@ -8,7 +7,8 @@ import {
   ShutterCurrencySymbol,
   TrophyIcon,
   WalletIcon,
-} from "@/components";
+  NumberValue,
+} from "@/components/atoms";
 
 const inter = Inter({ subsets: ["latin"] });
 
