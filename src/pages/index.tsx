@@ -15,10 +15,18 @@ import {
   TrophyIcon,
   WalletIcon,
 } from "@/components";
+import Slider from "@/components/molecules/Slider";
+import Modal from "@/components/molecules/Modal";
+import { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
     <main
       className={cc([
@@ -64,8 +72,13 @@ export default function Home() {
             </CardTemplate>
             <CardTemplate className="h-full grow col-span-2 flex flex-col"></CardTemplate>
           </div>
+          <button onClick={openModal}>Open modal</button>
+          <Slider />
         </div>
       </div>
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        <Slider />
+      </Modal>
     </main>
   );
 }
