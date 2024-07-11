@@ -111,11 +111,22 @@ export default function Home() {
             </CardTemplate>
             <CardTemplate className="h-full grow col-span-2 flex flex-col"></CardTemplate>
           </div>
-          <button onClick={openModal}>Open modal</button>
+          <button
+            className="w-full p-4 bg-black transition-colors duration-200 rounded-md hover:bg-primary"
+            onClick={openModal}
+          >
+            Open modal
+          </button>
           <Slider />
         </div>
       </div>
-      <Modal isOpen={isModalOpen} onClose={closeModal}>
+      <Modal
+        title="Stake"
+        action={() => {}}
+        buttonTitle="stake"
+        isOpen={isModalOpen}
+        onClose={closeModal}
+      >
         <Slider />
       </Modal>
     </main>

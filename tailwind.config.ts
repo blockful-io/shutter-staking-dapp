@@ -14,6 +14,7 @@ const config: Config = {
       backgroundColor: {
         primary: "#2E383E",
         secondary: "#1E282D",
+        yellow: "#D4ED7A",
         tertiary: "rgba(212, 237, 122, 0.12)",
         quaternary: "rgba(64, 180, 196, 0.12)",
       },
