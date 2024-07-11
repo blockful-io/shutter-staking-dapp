@@ -41,7 +41,7 @@ const StakingComponent: React.FC = () => {
           type="number"
           value={value}
           onChange={handleInputChange}
-          className="w-full bg-black text-center text-[48px] border border-primary text-white rounded no-spinner outline-none focus:border-white"
+          className="w-full bg-[#1E282D] text-center text-[48px] border border-white border-opacity-10 text-white rounded no-spinner outline-none focus:border-opacity-100"
         />
         <span className="absolute text-2xl bottom-2 right-4 p-0 text-white pointer-events-none">
           $shu
