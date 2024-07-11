@@ -1,18 +1,23 @@
 import { Inter } from "next/font/google";
 import cc from "classcat";
 import {
-  ArrowIcon,
   CardTemplate,
-  IconicButton,
   ShutterCurrencySymbol,
-  TrophyIcon,
   WalletIcon,
   NumberValue,
-} from "@/components/atoms";
+} from "@/components";
+import Slider from "@/components/molecules/Slider";
+import Modal from "@/components/molecules/Modal";
+import { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
     <main
       className={cc([
@@ -34,23 +39,19 @@ export default function Home() {
           </div>
         </div>
       </CardTemplate>
-      <CardTemplate>
-        <div className="h-full p-[28px] flex flex-col w-[240px]">
-          <TrophyIcon />
-          <div className="mt-1 text-base font-regular font-dm text-white">
-            Rewards Gained
-          </div>
-          <div className="flex space-x-1 items-end mt-1 mb-4">
-            <NumberValue label={1100} />
-            <ShutterCurrencySymbol />
-          </div>
-          <IconicButton
-            icon={<ArrowIcon />}
-            label={"CLAIM"}
-            onClick={() => alert("Execute claim action")}
-          />
-        </div>
-      </CardTemplate>
+
+      <div className="flex h-full border border-primary rounded-md p-4 max-w-lg flex-col w-full gap-4">
+        <button
+          className="border-primary hover:bg-secondary transition-colors duration-200 rounded-sm border p-4"
+          onClick={openModal}
+        >
+          Open modal
+        </button>
+        <Slider />
+      </div>
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        <Slider />
+      </Modal>
     </main>
   );
 }
