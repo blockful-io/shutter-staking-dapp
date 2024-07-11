@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
+const MAX_VALUE = 13500;
+
 const StakingComponent: React.FC = () => {
   const [value, setValue] = useState<number>(5400);
   const sliderRef = useRef<HTMLInputElement>(null);
@@ -10,17 +12,17 @@ const StakingComponent: React.FC = () => {
 
   useEffect(() => {
     if (sliderRef.current) {
-      const percentage = (value / 13500) * 100;
+      const percentage = (value / MAX_VALUE) * 100;
       sliderRef.current.style.setProperty("--value", `${percentage}%`);
     }
   }, [value]);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = parseInt(event.target.value.replace(/[^\d]/g, ""));
-    if (newValue >= 1 && newValue <= 13500) {
+    if (newValue >= 1 && newValue <= MAX_VALUE) {
       setValue(newValue);
-    } else if (newValue > 13500) {
-      setValue(13500);
+    } else if (newValue > MAX_VALUE) {
+      setValue(MAX_VALUE);
     } else if (newValue < 1) {
       setValue(1);
     }
@@ -28,10 +30,7 @@ const StakingComponent: React.FC = () => {
 
   return (
     <div className="flex flex-col items-start w-full mx-auto bg-gray-800 rounded-lg">
-      <label
-        className="text-white text-start text-lg mb-2"
-        htmlFor="stake-input"
-      >
+      <label className="text-white text-start text-lg" htmlFor="stake-input">
         Amount to stake
       </label>
 
@@ -41,15 +40,16 @@ const StakingComponent: React.FC = () => {
           type="number"
           value={value}
           onChange={handleInputChange}
-          className="w-full bg-[#1E282D] text-center text-[48px] border border-white border-opacity-10 text-white rounded no-spinner outline-none focus:border-opacity-100"
+          className="w-full bg-secondary text-center text-[36px] font-dm border border-white border-opacity-10 text-white rounded no-spinner outline-none focus:border-opacity-100"
         />
-        <span className="absolute text-2xl bottom-2 right-4 p-0 text-white pointer-events-none">
-          $shu
+        <span className="absolute text-base bottom-2 right-4 p-0 text-white pointer-events-none font-dm">
+          $SHU
         </span>
       </div>
+
       <div className="flex justify-between w-full my-1 text-white">
         <span>1</span>
-        <span>13,500</span>
+        <span>{MAX_VALUE}</span>
       </div>
       <input
         ref={sliderRef}

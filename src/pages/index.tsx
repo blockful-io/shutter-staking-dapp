@@ -45,7 +45,7 @@ export default function Home() {
               <IconicButton
                 icon={<ArrowUp />}
                 label={"STAKE"}
-                onClick={() => alert("Execute STAKE action")}
+                onClick={openModal}
               />
             </div>
             <div className="w-full h-full flex gap-3 flex-col items-start justify-center">
@@ -111,17 +111,10 @@ export default function Home() {
             </CardTemplate>
             <CardTemplate className="h-full grow col-span-2 flex flex-col"></CardTemplate>
           </div>
-          <button
-            className="w-full p-4 bg-black transition-colors duration-200 rounded-md hover:bg-primary"
-            onClick={openModal}
-          >
-            Open modal
-          </button>
-          <Slider />
         </div>
       </div>
       <Modal
-        title="Stake"
+        title="Stake $SHU Tokens"
         action={() => {}}
         buttonTitle="stake"
         isOpen={isModalOpen}
