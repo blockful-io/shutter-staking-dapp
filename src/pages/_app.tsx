@@ -39,7 +39,7 @@ export default function App({
               <div className={`${inter.className} h-screen flex flex-col`}>
                 <DappHeader />
                 <main>
-                  <div className="relative z-10 h-full flex-grow">
+                  <div className="relative h-full flex-grow">
                     <Toaster />
                     <Component {...pageProps} />
                   </div>

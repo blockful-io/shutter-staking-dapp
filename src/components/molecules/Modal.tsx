@@ -22,8 +22,8 @@ const Modal = ({
   return (
     <div
       className={cc([
-        "fixed inset-0 bg-black bg-opacity-50 flex backdrop-blur-sm justify-center items-center z-50 transition-all duration-300",
-        isOpen ? "" : "z-[-1] opacity-0",
+        "fixed inset-0 bg-black bg-opacity-50 flex backdrop-blur-sm justify-center items-center transition-all duration-300",
+        isOpen ? "z-50 opacity-100" : "opacity-0 z-[-50]",
       ])}
     >
       <div className="bg-[#1E282D] shadow-2xl border-white border-opacity-10 border rounded-lg w-[480px] overflow-hidden">
