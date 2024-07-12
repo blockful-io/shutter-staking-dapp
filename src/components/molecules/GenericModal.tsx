@@ -4,8 +4,8 @@ import { IconicButton } from "../atoms";
 
 interface ModalProps {
   title: string;
-  action: () => void;
-  buttonTitle: string;
+  onMainCtaClick: () => void;
+  buttonLabel: string;
   isOpen: boolean;
   onClose: () => void;
   children: JSX.Element;
@@ -16,8 +16,8 @@ export const GenericModal = ({
   onClose,
   children,
   title,
-  action,
-  buttonTitle,
+  onMainCtaClick,
+  buttonLabel,
 }: ModalProps) => {
   return (
     <div
@@ -39,24 +39,11 @@ export const GenericModal = ({
 
         <div className="p-5">{children}</div>
 
-        <div className="p-5 font-dm">
-          <div className="flex flex-col rounded-md overflow-hidden gap-[1px]">
-            <div className="flex items-center justify-between bg-primary p-3">
-              <p className="text-gray text-base">rewards available</p>
-              <p>120,000 $SHU</p>
-            </div>
-            <div className="flex flex-center justify-between bg-primary p-4">
-              <p className="text-gray">lock period</p>
-              <p>6 months</p>
-            </div>
-          </div>
-        </div>
-
         <div className="p-5">
           <IconicButton
-            label={buttonTitle}
-            onClick={action}
-            className="bg-yellow !text-[#1E282D] hover:bg-yellow hover:bg-opacity-80 !rounded-full"
+            label={buttonLabel}
+            onClick={onMainCtaClick}
+            className="bg-yellow !text-[#1E282D] hover:bg-yellow hover:brightness-110 !rounded-full"
           />
         </div>
       </div>

@@ -44,7 +44,7 @@ export default function Home() {
               </div>
               <IconicButton
                 icon={<ArrowUp />}
-                label={"STAKE"}
+                label="STAKE"
                 onClick={openModal}
               />
             </div>
@@ -59,8 +59,8 @@ export default function Home() {
               </div>
               <IconicButton
                 icon={<ArrowDown />}
-                label={"UNSTAKE"}
-                onClick={() => alert("Execute unstake action")}
+                label="UNSTAKE"
+                onClick={openModal}
               />
             </div>
           </div>
@@ -71,8 +71,8 @@ export default function Home() {
             className="rounded-t-none"
             iconPosition={IconPosition.RIGHT}
             icon={<ArrowRight />}
-            label={"see more"}
-            onClick={() => alert("Execute see more action")}
+            label="see more"
+            onClick={openModal}
           />
         </CardTemplate>
 
@@ -104,8 +104,8 @@ export default function Home() {
                 </div>
                 <IconicButton
                   icon={<ArrowUp />}
-                  label={"CLAIM"}
-                  onClick={() => alert("Execute claim action")}
+                  label="CLAIM"
+                  onClick={openModal}
                 />
               </div>
             </CardTemplate>
@@ -115,8 +115,8 @@ export default function Home() {
       </div>
       <GenericModal
         title="Stake $SHU Tokens"
-        action={() => {}}
-        buttonTitle="stake"
+        onMainCtaClick={() => {}}
+        buttonLabel="stake"
         isOpen={isModalOpen}
         onClose={closeModal}
       >
