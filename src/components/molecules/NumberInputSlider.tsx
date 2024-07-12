@@ -1,6 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
+import {
+  NumberDisplaySize,
+  NumberDisplayStyle,
+  NumberValue,
+  ShutterCurrencySymbol,
+} from "../atoms";
 
-const StakingComponent: React.FC = () => {
+const MAX_STAKE_AMOUNT = 13500;
+
+export const NumberInputSlider = () => {
   const [value, setValue] = useState<number>(5400);
   const sliderRef = useRef<HTMLInputElement>(null);
 
@@ -17,10 +25,10 @@ const StakingComponent: React.FC = () => {
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = parseInt(event.target.value.replace(/[^\d]/g, ""));
-    if (newValue >= 1 && newValue <= 13500) {
+    if (newValue >= 1 && newValue <= MAX_STAKE_AMOUNT) {
       setValue(newValue);
-    } else if (newValue > 13500) {
-      setValue(13500);
+    } else if (newValue > MAX_STAKE_AMOUNT) {
+      setValue(MAX_STAKE_AMOUNT);
     } else if (newValue < 1) {
       setValue(1);
     }
@@ -44,24 +52,28 @@ const StakingComponent: React.FC = () => {
           className="w-full bg-black text-center text-[48px] border border-primary text-white rounded no-spinner outline-none focus:border-white"
         />
         <span className="absolute text-2xl bottom-2 right-4 p-0 text-white pointer-events-none">
-          $shu
+          <ShutterCurrencySymbol />
         </span>
       </div>
       <div className="flex justify-between w-full my-1 text-white">
         <span>1</span>
-        <span>13,500</span>
+        <span>
+          <NumberValue
+            label={MAX_STAKE_AMOUNT}
+            displaySize={NumberDisplaySize.Small}
+            numberDisplayStyle={NumberDisplayStyle.PrimaryNumber}
+          />
+        </span>
       </div>
       <input
-        ref={sliderRef}
-        type="range"
         min="1"
-        max="13500"
+        type="range"
         value={value}
+        ref={sliderRef}
+        max={MAX_STAKE_AMOUNT}
         onChange={handleSliderChange}
         className="w-full h-2 bg-primary rounded-lg appearance-none cursor-pointer accent-white"
       />
     </div>
   );
 };
-
-export default StakingComponent;
