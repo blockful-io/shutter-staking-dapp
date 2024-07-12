@@ -4,6 +4,8 @@ import {
   NumberDisplaySize,
   NumberDisplayStyle,
   NumberValue,
+  ShutterCurrencySymbol,
+  ShutterCurrencySymbolStyle,
 } from "@/components";
 
 export interface StakingTableRowProps {
@@ -26,7 +28,7 @@ export const StakingTableRow = ({
       <p className="text-start col-span-1 text-gray-400">#{index}</p>
       <div className="flex gap-1 justify-start col-span-2 ">
         <NumberValue displaySize={NumberDisplaySize.Small} label={amount} />
-        $SHU
+        <ShutterCurrencySymbol />
       </div>
 
       <div className="flex gap-1 justify-start col-span-2 text-secondary">
@@ -35,7 +37,9 @@ export const StakingTableRow = ({
           numberDisplayStyle={NumberDisplayStyle.SecondaryNumber}
           label={rewards}
         />{" "}
-        $SHU
+        <ShutterCurrencySymbol
+          style={ShutterCurrencySymbolStyle.RegularSecondary}
+        />
       </div>
 
       <div className="flex justify-start col-span-2 ">

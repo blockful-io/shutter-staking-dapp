@@ -8,14 +8,14 @@ import {
   IconicButton,
   IconPosition,
   NumberDisplayStyle,
+  NumberInputSlider,
   NumberValue,
   ShutterCurrencySymbol,
   StakingTable,
   TrophyIcon,
   WalletIcon,
+  GenericModal,
 } from "@/components";
-import Slider from "@/components/molecules/Slider";
-import Modal from "@/components/molecules/Modal";
 import { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -113,15 +113,15 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <Modal
+      <GenericModal
         title="Stake $SHU Tokens"
         action={() => {}}
         buttonTitle="stake"
         isOpen={isModalOpen}
         onClose={closeModal}
       >
-        <Slider />
-      </Modal>
+        <NumberInputSlider />
+      </GenericModal>
     </main>
   );
 }

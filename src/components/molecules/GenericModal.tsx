@@ -8,10 +8,10 @@ interface ModalProps {
   buttonTitle: string;
   isOpen: boolean;
   onClose: () => void;
-  children: React.ReactNode;
+  children: JSX.Element;
 }
 
-const Modal = ({
+export const GenericModal = ({
   isOpen,
   onClose,
   children,
@@ -63,5 +63,3 @@ const Modal = ({
     </div>
   );
 };
-
-export default Modal;
