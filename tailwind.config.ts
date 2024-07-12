@@ -10,6 +10,7 @@ const config: Config = {
         tertiary: "rgba(212, 237, 122, 1)",
         quaternary: "rgba(64, 180, 196, 1)",
         gray: "#B3B4B9",
+        brandBlack: "#1E282D",
       },
       backgroundColor: {
         primary: "#2E383E",

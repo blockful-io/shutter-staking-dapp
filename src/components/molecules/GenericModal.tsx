@@ -30,7 +30,7 @@ export const GenericModal = ({
         onClick={(event) => {
           event.stopPropagation();
         }}
-        className="bg-[#1E282D] shadow-2xl border-white border-opacity-10 border rounded-lg w-[480px] overflow-hidden"
+        className="bg-secondary shadow-2xl border-white border-opacity-10 border rounded-lg w-[480px] overflow-hidden"
       >
         <div className="flex justify-between border-white border-opacity-10 items-center p-5 border-b">
           <h3 className="text-lg text-[20px] font-dm font-medium">{title}</h3>
@@ -48,7 +48,7 @@ export const GenericModal = ({
           <IconicButton
             label={buttonLabel}
             onClick={onMainCtaClick}
-            className="bg-yellow !text-[#1E282D] hover:bg-yellow hover:brightness-110 !rounded-full"
+            className="bg-yellow !text-brandBlack hover:bg-yellow hover:brightness-110 !rounded-full"
           />
         </div>
       </div>
