@@ -32,7 +32,10 @@ interface StakingTableProps {
 
 export const StakingTable = ({ rows = defaultRows }: StakingTableProps) => {
   return (
-    <div className="grid grid-cols-9 gap-4 grid-flow-row-dense w-full pl-6 border-t border-primary py-5">
+    <div
+      role="table"
+      className="grid grid-cols-9 gap-4 grid-flow-row-dense w-full pl-6 border-t border-primary py-5"
+    >
       <StakingTableHead />
       {rows.map((item, index) => {
         return (
