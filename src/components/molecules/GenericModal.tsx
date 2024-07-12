@@ -1,4 +1,3 @@
-import React from "react";
 import cc from "classcat";
 import { IconicButton } from "../atoms";
 
@@ -25,10 +24,16 @@ export const GenericModal = ({
         "fixed inset-0 bg-black bg-opacity-50 flex backdrop-blur-sm justify-center items-center transition-all duration-300",
         isOpen ? "z-50 opacity-100" : "opacity-0 z-[-50]",
       ])}
+      onClick={onClose}
     >
-      <div className="bg-[#1E282D] shadow-2xl border-white border-opacity-10 border rounded-lg w-[480px] overflow-hidden">
+      <div
+        onClick={(event) => {
+          event.stopPropagation();
+        }}
+        className="bg-[#1E282D] shadow-2xl border-white border-opacity-10 border rounded-lg w-[480px] overflow-hidden"
+      >
         <div className="flex justify-between border-white border-opacity-10 items-center p-5 border-b">
-          <h3 className="text-lg text-[20px] font-dm font-medium	">{title}</h3>
+          <h3 className="text-lg text-[20px] font-dm font-medium">{title}</h3>
           <button
             onClick={onClose}
             className="text-white bg-secondary shadow-white px-2 rounded-md hover:bg-primary text-xl transition-colors duration-300"

@@ -36,7 +36,7 @@ export const NumberInputSlider = () => {
 
   return (
     <div className="flex flex-col items-start w-full mx-auto bg-gray-800 rounded-lg">
-      <label className="text-white text-start text-lg" htmlFor="stake-input">
+      <label className="text-white text-start text-sm" htmlFor="stake-input">
         Amount to stake
       </label>
 
