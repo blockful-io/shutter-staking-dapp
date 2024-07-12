@@ -6,12 +6,12 @@ interface CardTemplateProps extends React.ComponentPropsWithoutRef<"div"> {}
 export const CardTemplate: React.FC<CardTemplateProps> = ({
   children,
   className,
-  ...rest
+  ...props
 }) => {
   return (
     <div
       className={cc(["border border-primary rounded-lg", className])}
-      {...rest}
+      {...props}
     >
       {children}
     </div>
