@@ -8,16 +8,24 @@ import {
   IconicButton,
   IconPosition,
   NumberDisplayStyle,
+  NumberInputSlider,
   NumberValue,
   ShutterCurrencySymbol,
   StakingTable,
   TrophyIcon,
   WalletIcon,
+  GenericModal,
 } from "@/components";
+import { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
     <main
       className={cc([
@@ -36,8 +44,8 @@ export default function Home() {
               </div>
               <IconicButton
                 icon={<ArrowUp />}
-                label={"STAKE"}
-                onClick={() => alert("Execute STAKE action")}
+                label="STAKE"
+                onClick={openModal}
               />
             </div>
             <div className="w-full h-full flex gap-3 flex-col items-start justify-center">
@@ -51,8 +59,8 @@ export default function Home() {
               </div>
               <IconicButton
                 icon={<ArrowDown />}
-                label={"UNSTAKE"}
-                onClick={() => alert("Execute unstake action")}
+                label="UNSTAKE"
+                onClick={openModal}
               />
             </div>
           </div>
@@ -63,8 +71,8 @@ export default function Home() {
             className="rounded-t-none"
             iconPosition={IconPosition.RIGHT}
             icon={<ArrowRight />}
-            label={"see more"}
-            onClick={() => alert("Execute see more action")}
+            label="see more"
+            onClick={openModal}
           />
         </CardTemplate>
 
@@ -96,8 +104,8 @@ export default function Home() {
                 </div>
                 <IconicButton
                   icon={<ArrowUp />}
-                  label={"CLAIM"}
-                  onClick={() => alert("Execute claim action")}
+                  label="CLAIM"
+                  onClick={openModal}
                 />
               </div>
             </CardTemplate>
@@ -105,6 +113,15 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <GenericModal
+        title="Stake $SHU Tokens"
+        onMainCtaClick={() => {}}
+        buttonLabel="stake"
+        isOpen={isModalOpen}
+        onClose={closeModal}
+      >
+        <NumberInputSlider />
+      </GenericModal>
     </main>
   );
 }
