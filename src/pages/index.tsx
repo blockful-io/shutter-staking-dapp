@@ -21,6 +21,7 @@ import {
 } from "@/components";
 import { useState } from "react";
 import Image from "next/image";
+import Avatar from "boring-avatars";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -132,14 +133,8 @@ export default function Home() {
                 <p className="text-gray font-dm text-xs">ADDRESS</p>
                 <p className="text-gray font-dm text-xs">STAKED AMOUNT</p>
 
-                <div className="flex gap-2 items-center justify-start">
-                  <Image
-                    className="rounded-full"
-                    src={"/images/example.png"}
-                    alt="user avatar"
-                    width={25}
-                    height={25}
-                  />
+                <div className="flex gap-2 items-center justify-start font-dm">
+                  <Avatar size={25} name="Margaret Brent" variant="beam" />
                   Julian.eth
                 </div>
                 <div className="flex gap-2 items-center justify-start">
@@ -153,14 +148,8 @@ export default function Home() {
                   />
                 </div>
 
-                <div className="flex gap-2 items-center justify-start">
-                  <Image
-                    className="rounded-full"
-                    src={"/images/example.png"}
-                    alt="user avatar"
-                    width={25}
-                    height={25}
-                  />
+                <div className="flex gap-2 items-center justify-start font-dm">
+                  <Avatar size={25} name="Alice Paul" variant="beam" />
                   Dudu.eth
                 </div>
                 <div className="flex gap-2 items-center justify-start">
