@@ -8,5 +8,7 @@ export const DateComponent = ({
   timestamp = Date.now(),
 }: DateComponentProps) => {
   const result = format(timestamp, "dd/MM/yyyy");
-  return <p className="text-base font-normal font-dm text-gray">{result}</p>;
+  return (
+    <span className="text-base font-normal font-dm text-gray">{result}</span>
+  );
 };

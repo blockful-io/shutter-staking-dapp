@@ -1,7 +1,19 @@
-export const CardTemplate = (props: React.PropsWithChildren) => {
+import React from "react";
+import cc from "classcat";
+
+interface CardTemplateProps extends React.ComponentPropsWithoutRef<"div"> {}
+
+export const CardTemplate: React.FC<CardTemplateProps> = ({
+  children,
+  className,
+  ...props
+}) => {
   return (
-    <div className="h-full border border-primary rounded-lg">
-      {props.children}
+    <div
+      className={cc(["border border-primary rounded-lg", className])}
+      {...props}
+    >
+      {children}
     </div>
   );
 };

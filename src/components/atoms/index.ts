@@ -8,6 +8,8 @@ export * from "./HeightSeparator";
 export * from "./HeaderLink";
 
 export * from "./icons/WalletIcon";
-export * from "./icons/ArrowIcon";
+export * from "./icons/ArrowDown";
+export * from "./icons/ArrowUp";
+export * from "./icons/ArrowRight";
 export * from "./icons/PlusIcon";
 export * from "./icons/TrophyIcon";

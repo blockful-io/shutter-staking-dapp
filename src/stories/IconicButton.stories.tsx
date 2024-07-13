@@ -1,5 +1,5 @@
 import {
-  ArrowIcon,
+  ArrowDown,
   IconPosition,
   IconicButton,
   PlusIcon,
@@ -15,19 +15,19 @@ const meta = {
   argTypes: {
     label: { control: "select" },
   },
-  args: { icon: <ArrowIcon />, label: "Label", onClick: () => {} },
+  args: { icon: <ArrowDown />, label: "Label", onClick: () => {} },
 } satisfies Meta<typeof IconicButton>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const ButtonWithIconInTheLeft: Story = {
-  args: { icon: <ArrowIcon />, label: "ANY LABEL WANTED", onClick: () => {} },
+  args: { icon: <ArrowDown />, label: "ANY LABEL WANTED", onClick: () => {} },
 };
 
 export const ButtonWithIconInTheRight: Story = {
   args: {
-    icon: <ArrowIcon />,
+    icon: <ArrowDown />,
     label: "ANY LABEL WANTED",
     onClick: () => {},
     iconPosition: IconPosition.RIGHT,
@@ -36,7 +36,7 @@ export const ButtonWithIconInTheRight: Story = {
 
 export const StakeButtonExample: Story = {
   args: {
-    icon: <ArrowIcon />,
+    icon: <ArrowDown />,
     label: "STAKE",
     onClick: () => alert("Execute stake action"),
   },
@@ -46,7 +46,7 @@ export const UnstakeButtonExample: Story = {
   args: {
     icon: (
       <div className="transform rotate-180">
-        <ArrowIcon />
+        <ArrowDown />
       </div>
     ),
     label: "UNSTAKE",
@@ -56,7 +56,7 @@ export const UnstakeButtonExample: Story = {
 
 export const ClaimButtonExample: Story = {
   args: {
-    icon: <ArrowIcon />,
+    icon: <ArrowDown />,
     label: "CLAIM",
     onClick: () => alert("Execute claim action"),
   },
@@ -74,7 +74,7 @@ export const SeeMoreButtonExample: Story = {
   args: {
     icon: (
       <div className="transform -rotate-90">
-        <ArrowIcon />
+        <ArrowDown />
       </div>
     ),
     label: "SEE MORE",

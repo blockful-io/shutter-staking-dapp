@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export const DappHeader = () => {
   return (
-    <div className="w-screen flex items-stretch mx-auto p-6 max-w-[1040px] justify-between">
+    <div className="w-screen flex items-stretch mx-auto p-6 max-w-[1216px] justify-between">
       <div className="flex items-center gap-6">
         <Link href="/">
           <Image
@@ -20,7 +20,7 @@ export const DappHeader = () => {
         <HeaderLink href="" label="Forum" />
       </div>
 
-      {/* <ConnectWallet /> */}
+      <ConnectWallet />
     </div>
   );
 };
