@@ -7,6 +7,7 @@ import {
   ShutterCurrencySymbol,
   ShutterCurrencySymbolStyle,
 } from "@/components";
+import { DateComponent } from "../atoms/DateComponent";
 
 export interface StakingTableRowProps {
   index?: number;
@@ -25,7 +26,7 @@ export const StakingTableRow = ({
 }: StakingTableRowProps) => {
   return (
     <>
-      <p className="text-start col-span-1 text-gray-400">#{index}</p>
+      <p className="text-start col-span-1 text-gray">#{index}</p>
       <div className="flex gap-1 justify-start col-span-2 ">
         <NumberValue displaySize={NumberDisplaySize.Small} label={amount} />
         <ShutterCurrencySymbol />
@@ -36,7 +37,7 @@ export const StakingTableRow = ({
           displaySize={NumberDisplaySize.Small}
           numberDisplayStyle={NumberDisplayStyle.SecondaryNumber}
           label={rewards}
-        />{" "}
+        />
         <ShutterCurrencySymbol
           style={ShutterCurrencySymbolStyle.RegularSecondary}
         />
@@ -46,7 +47,9 @@ export const StakingTableRow = ({
         <LockStatusBadge status={status} />
       </div>
 
-      <p className="text-start col-span-2 text-gray-400">06/10/2024</p>
+      <p className="text-start col-span-2 text-gray-400">
+        <DateComponent timestamp={unlockDate} />
+      </p>
     </>
   );
 };
