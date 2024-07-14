@@ -1,3 +1,4 @@
+import React from "react";
 import {
   NumberDisplaySize,
   NumberDisplayStyle,
@@ -5,10 +6,11 @@ import {
   ShutterCurrencySymbol,
   ShutterCurrencySymbolStyle,
 } from "@/components/atoms";
+import cc from "classcat";
 
-interface AmountProps {
+interface AmountProps extends React.HTMLProps<HTMLDivElement> {
   amount: number;
-  style?: AmountStyle;
+  amountStyle?: AmountStyle;
 }
 
 export enum AmountStyle {
@@ -17,15 +19,20 @@ export enum AmountStyle {
 }
 
 export const Amount = ({
-  style = AmountStyle.Primary,
+  amountStyle = AmountStyle.Primary,
   amount,
+  className,
+  ...divProps
 }: AmountProps) => {
   return (
-    <div className="flex gap-2 items-center justify-start">
+    <div
+      className={cc(["flex gap-1 items-center justify-start", className])}
+      {...divProps}
+    >
       <NumberValue
         displaySize={NumberDisplaySize.Small}
         numberDisplayStyle={
-          style === AmountStyle.Primary
+          amountStyle === AmountStyle.Primary
             ? NumberDisplayStyle.PrimaryNumber
             : NumberDisplayStyle.SecondaryNumber
         }
@@ -33,7 +40,7 @@ export const Amount = ({
       />
       <ShutterCurrencySymbol
         style={
-          style === AmountStyle.Primary
+          amountStyle === AmountStyle.Primary
             ? ShutterCurrencySymbolStyle.RegularPrimary
             : ShutterCurrencySymbolStyle.RegularSecondary
         }

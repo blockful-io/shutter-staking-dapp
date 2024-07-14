@@ -1,4 +1,6 @@
 import {
+  Amount,
+  AmountStyle,
   LockStatus,
   LockStatusBadge,
   NumberDisplaySize,
@@ -27,21 +29,14 @@ export const StakingTableRow = ({
   return (
     <>
       <p className="text-start col-span-1 text-gray">#{index}</p>
-      <div className="flex gap-1 justify-start col-span-2 ">
-        <NumberValue displaySize={NumberDisplaySize.Small} label={amount} />
-        <ShutterCurrencySymbol />
-      </div>
 
-      <div className="flex gap-1 justify-start col-span-2 text-secondary">
-        <NumberValue
-          displaySize={NumberDisplaySize.Small}
-          numberDisplayStyle={NumberDisplayStyle.SecondaryNumber}
-          label={rewards}
-        />
-        <ShutterCurrencySymbol
-          style={ShutterCurrencySymbolStyle.RegularSecondary}
-        />
-      </div>
+      <Amount className="col-span-2" amount={amount} />
+
+      <Amount
+        className="col-span-2"
+        amount={rewards}
+        amountStyle={AmountStyle.Secondary}
+      />
 
       <div className="flex justify-start col-span-2 ">
         <LockStatusBadge status={status} />
