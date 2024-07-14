@@ -3,33 +3,10 @@ import {
   CardTemplate,
   IconicButton,
   IconPosition,
-  NumberDisplaySize,
-  NumberDisplayStyle,
-  NumberValue,
   PlusIcon,
-  ShutterCurrencySymbol,
-  ShutterCurrencySymbolStyle,
+  Amount,
 } from "@/components";
 import Avatar from "boring-avatars";
-
-interface StakedAmountProps {
-  amount: number;
-}
-
-export const StakedAmount = ({ amount }: StakedAmountProps) => {
-  return (
-    <div className="flex gap-2 items-center justify-start">
-      <NumberValue
-        displaySize={NumberDisplaySize.Small}
-        numberDisplayStyle={NumberDisplayStyle.PrimaryNumber}
-        label={amount}
-      />
-      <ShutterCurrencySymbol
-        style={ShutterCurrencySymbolStyle.RegularPrimary}
-      />
-    </div>
-  );
-};
 
 export const KeypersList = () => {
   return (
@@ -56,14 +33,14 @@ export const KeypersList = () => {
             Julian.eth
           </div>
 
-          <StakedAmount amount={50000} />
+          <Amount amount={50000} />
 
           <div className="flex gap-2 items-center justify-start font-dm">
             <Avatar size={25} name="Alice Paul" variant="beam" />
             Dudu.eth
           </div>
 
-          <StakedAmount amount={123000} />
+          <Amount amount={123000} />
         </div>
       </div>
 

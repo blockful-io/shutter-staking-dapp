@@ -12,7 +12,7 @@ import { StakeSection, KeypersList } from "@/components/organisms";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
@@ -48,6 +48,6 @@ export default function Home() {
       </GenericModal>
     </main>
   );
-}
+};
 
-// export default Home;
+export default Home;
