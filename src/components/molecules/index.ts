@@ -6,3 +6,4 @@ export * from "./NumberInputSlider";
 export * from "./RewardsGained";
 export * from "./WalletBalance";
 export * from "./Amount";
+export * from "./EnsProfile";

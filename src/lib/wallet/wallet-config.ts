@@ -5,10 +5,14 @@ import { mainnet, sepolia } from "viem/chains";
 import { createConfig, http } from "wagmi";
 import { isTestnet } from "./chains";
 import { QueryClient } from "@tanstack/react-query";
+import { addEnsContracts } from "@ensdomains/ensjs";
 
 const alchemyApiKey = process.env.NEXT_PUBLIC_ALCHEMY_KEY;
 
 const alchemyApiTestnetKey = process.env.NEXT_PUBLIC_ALCHEMY_TESTNET_KEY;
+
+const mainnetWithEns = addEnsContracts(mainnet);
+const sepoliaWithEns = addEnsContracts(sepolia);
 
 if (isTestnet && alchemyApiTestnetKey == undefined) {
   throw new Error("Missing API key for testnet environment");
@@ -25,7 +29,7 @@ export const rpcHttpUrl = `https://eth-${
 
 // Create a public client for fetching data from the blockchain
 export const publicClient = createPublicClient({
-  chain: isTestnet ? sepolia : mainnet,
+  chain: isTestnet ? sepoliaWithEns : mainnetWithEns,
   batch: { multicall: true },
   transport: http(),
 });
