@@ -1,9 +1,6 @@
 import { LockStatus } from "../atoms";
+import { StakingTableRow, StakingTableRowProps } from "../organisms";
 import { StakingTableHead } from "./StakingTableHead";
-import {
-  StakingTableRow,
-  StakingTableRowProps,
-} from "../organisms/StakingTableRow";
 
 const defaultRows: StakingTableRowProps[] = [
   {

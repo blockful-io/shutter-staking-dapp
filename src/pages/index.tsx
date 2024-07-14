@@ -1,18 +1,18 @@
 import { Inter } from "next/font/google";
 import cc from "classcat";
-import {
-  NumberInputSlider,
-  GenericModal,
-  KeypersList,
-  StakeSection,
-  WalletBalance,
-  RewardsGained,
-} from "@/components";
+
 import { useState } from "react";
+import {
+  GenericModal,
+  NumberInputSlider,
+  RewardsGained,
+  WalletBalance,
+} from "@/components";
+import { StakeSection, KeypersList } from "@/components/organisms";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const Home = () => {
+export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
@@ -48,6 +48,6 @@ const Home = () => {
       </GenericModal>
     </main>
   );
-};
+}
 
-export default Home;
+// export default Home;
