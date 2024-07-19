@@ -9,7 +9,7 @@ import {
 } from "../lib/wallet/wallet-config";
 import { WagmiProvider } from "wagmi";
 import { SessionProvider } from "next-auth/react";
-import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
+import { darkTheme, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { RainbowKitSiweNextAuthProvider } from "@rainbow-me/rainbowkit-siwe-next-auth";
 
@@ -35,7 +35,15 @@ export default function App({
           <RainbowKitSiweNextAuthProvider
             getSiweMessageOptions={getSiweMessageOptions}
           >
-            <RainbowKitProvider>
+            <RainbowKitProvider
+              theme={darkTheme({
+                accentColor: "#D4ED7A",
+                accentColorForeground: "white",
+                borderRadius: "small",
+                fontStack: "system",
+                overlayBlur: "small",
+              })}
+            >
               <div className={`${inter.className} h-screen flex flex-col`}>
                 <DappHeader />
                 <main>

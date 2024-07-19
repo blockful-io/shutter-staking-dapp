@@ -20,13 +20,13 @@ export const ConnectWallet = () => {
         if (!connected) {
           return (
             <button
-              className="text-white"
+              className="text-xs text-black font-semibold bg-green p-2 px-3 rounded-full"
               onClick={(e: any) => {
                 openConnectModal();
                 e.preventDefault();
               }}
             >
-              Connect Wallet
+              CONNECT
             </button>
           );
         }
@@ -43,7 +43,7 @@ export const ConnectWallet = () => {
               type="button"
               className={unsupportedChainClassName}
             >
-              <span className="flex-shrink-0 text-sm font-medium">
+              <span className="flex-shrink-0 text-xs text-black font-semibold bg-green p-2 px-3 rounded-full">
                 Unsupported network
               </span>
             </button>

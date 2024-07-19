@@ -18,6 +18,7 @@ const config: Config = {
         yellow: "#D4ED7A",
         tertiary: "rgba(212, 237, 122, 0.12)",
         quaternary: "rgba(64, 180, 196, 0.12)",
+        green: "#D4ED7A",
       },
       borderColor: {
         primary: "#2E383E",
