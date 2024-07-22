@@ -1,18 +1,38 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Address } from "viem";
 import { CardTemplate } from "../atoms";
 import { EnsProfile } from "./EnsProfile";
 import { DisconnectIcon } from "../atoms/icons/DisconnectIcon";
 import { UserIcon } from "../atoms/icons/UserIcon";
+import { useDisconnect } from "wagmi";
 
 interface UserDropdownProps {
   address: Address;
 }
+
 const UserDropdownn = ({ address }: UserDropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const disconnect = useDisconnect();
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      dropdownRef.current &&
+      !dropdownRef.current.contains(event.target as Node)
+    ) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
-    <div className="relative inline-block text-left">
+    <div className="relative inline-block text-left" ref={dropdownRef}>
       <button
         onClick={() => {
           setIsOpen(!isOpen);
@@ -31,7 +51,10 @@ const UserDropdownn = ({ address }: UserDropdownProps) => {
             aria-labelledby="options-menu"
           >
             <button
-              className="flex gap-2 hover:bg-primary p-3 text-sm text-gray-700 hover:bg-gray-100 w-full text-left transition-colors duration-300"
+              onClick={() => {
+                disconnect.disconnect();
+              }}
+              className="flex gap-2 items-center hover:bg-primary p-3 text-sm text-gray-700 hover:bg-gray-100 w-full text-left transition-colors duration-300"
               role="menuitem"
             >
               <DisconnectIcon />
@@ -39,11 +62,18 @@ const UserDropdownn = ({ address }: UserDropdownProps) => {
             </button>
 
             <button
-              className="flex gap-2 hover:bg-primary p-3 text-sm text-gray-700 hover:bg-gray-100 w-full text-left transition-colors duration-300"
+              disabled
+              className="flex justify-between items-center gap-2 cursor-not-allowed p-3 text-sm text-gray-700 hover:bg-gray-100 w-full text-left transition-colors duration-300"
               role="menuitem"
             >
-              <UserIcon />
-              <h2 className="text-gray">Profile</h2>
+              <div className="flex items-center justify-center gap-2">
+                <UserIcon />
+                <h2 className="text-gray">Profile</h2>
+              </div>
+
+              <div className="py-1 px-2 text-xs rounded-full bg-black">
+                COMING SOON
+              </div>
             </button>
           </div>
         </div>
