@@ -71,7 +71,7 @@ const UserDropdownn = ({ address }: UserDropdownProps) => {
                 <h2 className="text-gray">Profile</h2>
               </div>
 
-              <div className="py-1 px-2 text-xs rounded-full bg-black">
+              <div className="py-1 px-2 text-xs rounded-full bg-white bg-opacity-10 font-bold">
                 COMING SOON
               </div>
             </button>
