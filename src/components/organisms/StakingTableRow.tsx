@@ -1,15 +1,7 @@
-import {
-  Amount,
-  AmountStyle,
-  LockStatus,
-  LockStatusBadge,
-  NumberDisplaySize,
-  NumberDisplayStyle,
-  NumberValue,
-  ShutterCurrencySymbol,
-  ShutterCurrencySymbolStyle,
-} from "@/components";
+import { Amount, LockStatusBadge } from "@/components";
 import { DateComponent } from "../atoms/DateComponent";
+import { LockStatus } from "@/types/lockStatus";
+import { AmountStyle } from "@/types/amountStyle";
 
 export interface StakingTableRowProps {
   index?: number;

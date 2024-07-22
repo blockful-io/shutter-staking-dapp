@@ -10,7 +10,7 @@ interface UserDropdownProps {
   address: Address;
 }
 
-const UserDropdownn = ({ address }: UserDropdownProps) => {
+const UserDropdown = ({ address }: UserDropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const disconnect = useDisconnect();
@@ -82,4 +82,4 @@ const UserDropdownn = ({ address }: UserDropdownProps) => {
   );
 };
 
-export default UserDropdownn;
+export default UserDropdown;

@@ -1,9 +1,8 @@
-import { ConnectButton, useAccountModal } from "@rainbow-me/rainbowkit";
-import UserDropdownn from "../molecules/UserDropdown";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { Address } from "viem";
+import UserDropdown from "../molecules/UserDropdown";
 
 export const ConnectWallet = () => {
-  const { openAccountModal } = useAccountModal();
-
   return (
     <ConnectButton.Custom>
       {({
@@ -51,14 +50,9 @@ export const ConnectWallet = () => {
           );
         }
 
-        // TODO: create Shutter Stakind dApp UserDropdown
-        // return <UserDropdown />;
-
         return (
           <div style={{ display: "flex", gap: 12 }}>
-            {account.address && (
-              <UserDropdownn address={account.address as `0x${string}`} />
-            )}
+            <UserDropdown address={account.address as Address} />
           </div>
         );
       }}

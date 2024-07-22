@@ -1,4 +1,3 @@
-export * from "./ConnectWallet";
 export * from "./NumberValue";
 export * from "./IconicButton";
 export * from "./ShutterCurrencySymbol";
