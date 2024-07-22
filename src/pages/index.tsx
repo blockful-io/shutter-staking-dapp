@@ -9,7 +9,6 @@ import {
   WalletBalance,
 } from "@/components";
 import { StakeSection, KeypersList } from "@/components/organisms";
-import { EnsProfile } from "@/components/molecules/EnsProfile";
 
 const inter = Inter({ subsets: ["latin"] });
 
