@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Address } from "viem";
 import { CardTemplate } from "../atoms";
 import { EnsProfile } from "./EnsProfile";
+import { DisconnectIcon } from "../atoms/icons/DisconnectIcon";
+import { UserIcon } from "../atoms/icons/UserIcon";
 
 interface UserDropdownProps {
   address: Address;
@@ -29,16 +31,18 @@ const UserDropdownn = ({ address }: UserDropdownProps) => {
             aria-labelledby="options-menu"
           >
             <button
-              className="block hover:bg-white p-3 text-sm text-gray-700 hover:bg-gray-100 w-full text-left "
+              className="flex gap-2 hover:bg-primary p-3 text-sm text-gray-700 hover:bg-gray-100 w-full text-left transition-colors duration-300"
               role="menuitem"
             >
+              <DisconnectIcon />
               <h2 className="text-gray">Disconnect</h2>
             </button>
 
             <button
-              className="block hover:bg-white p-3 text-sm text-gray-700 hover:bg-gray-100 w-full text-left "
+              className="flex gap-2 hover:bg-primary p-3 text-sm text-gray-700 hover:bg-gray-100 w-full text-left transition-colors duration-300"
               role="menuitem"
             >
+              <UserIcon />
               <h2 className="text-gray">Profile</h2>
             </button>
           </div>
