@@ -20,7 +20,6 @@ import {
   ShutterCurrencySymbolStyle,
 } from "@/components";
 import { useState } from "react";
-import Image from "next/image";
 import Avatar from "boring-avatars";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -108,9 +107,9 @@ export default function Home() {
                   <ShutterCurrencySymbol />
                 </div>
                 <IconicButton
+                  onClick={openModal}
                   icon={<ArrowUp />}
                   label="CLAIM"
-                  onClick={openModal}
                 />
               </div>
             </CardTemplate>
@@ -121,10 +120,10 @@ export default function Home() {
 
               <div>
                 <IconicButton
+                  className="py-2 px-3"
                   icon={<PlusIcon />}
-                  className=" py-2 px-3"
-                  label="Delegate"
                   onClick={() => {}}
+                  label="Delegate"
                 />
               </div>
             </div>
@@ -134,7 +133,12 @@ export default function Home() {
                 <p className="text-gray font-dm text-xs">STAKED AMOUNT</p>
 
                 <div className="flex gap-2 items-center justify-start font-dm">
-                  <Avatar size={25} name="Margaret Brent" variant="beam" />
+                  <Avatar
+                    size={25}
+                    name="Margaret Brent"
+                    variant="beam"
+                    colors={["#D4ED7A", "#40b4c4"]}
+                  />
                   Julian.eth
                 </div>
                 <div className="flex gap-2 items-center justify-start">
@@ -149,7 +153,12 @@ export default function Home() {
                 </div>
 
                 <div className="flex gap-2 items-center justify-start font-dm">
-                  <Avatar size={25} name="Alice Paul" variant="beam" />
+                  <Avatar
+                    size={25}
+                    name="Alice Paul"
+                    variant="beam"
+                    colors={["#D4ED7A", "#40b4c4"]}
+                  />
                   Dudu.eth
                 </div>
                 <div className="flex gap-2 items-center justify-start">
