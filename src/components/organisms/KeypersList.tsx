@@ -2,11 +2,11 @@ import {
   ArrowRight,
   CardTemplate,
   IconicButton,
-  IconPosition,
   PlusIcon,
   Amount,
   EnsProfile,
 } from "@/components";
+import { IconPosition } from "@/types/iconPosition";
 
 export const KeypersList = () => {
   return (

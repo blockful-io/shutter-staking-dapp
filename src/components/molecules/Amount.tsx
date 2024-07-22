@@ -1,12 +1,12 @@
 import React from "react";
 import {
-  NumberDisplaySize,
-  NumberDisplayStyle,
   NumberValue,
   ShutterCurrencySymbol,
   ShutterCurrencySymbolStyle,
 } from "@/components/atoms";
 import cc from "classcat";
+import { NumberDisplaySize } from "@/types/numberDisplaySize";
+import { NumberDisplayStyle } from "@/types/numberDisplayStyle";
 
 interface AmountProps extends React.HTMLProps<HTMLDivElement> {
   amount: number;

@@ -1,7 +1,4 @@
-export enum LockStatus {
-  LOCKED = "LOCKED",
-  UNLOCKED = "UNLOCKED",
-}
+import { LockStatus } from "@/types/lockStatus";
 
 interface LockStatusBadgeProps {
   status: LockStatus;

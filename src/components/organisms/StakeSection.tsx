@@ -4,12 +4,12 @@ import {
   ArrowUp,
   CardTemplate,
   IconicButton,
-  IconPosition,
-  NumberDisplayStyle,
   NumberValue,
   ShutterCurrencySymbol,
 } from "@/components";
 import { StakingTable } from "@/components/molecules";
+import { IconPosition } from "@/types/iconPosition";
+import { NumberDisplayStyle } from "@/types/numberDisplayStyle";
 
 interface RewardsGainedProps {
   onButtonClick: () => void;

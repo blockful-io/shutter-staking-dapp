@@ -1,14 +1,6 @@
+import { NumberDisplaySize } from "@/types/numberDisplaySize";
+import { NumberDisplayStyle } from "@/types/numberDisplayStyle";
 import cc from "classcat";
-
-export enum NumberDisplayStyle {
-  PrimaryNumber = "text-primary font-dm",
-  SecondaryNumber = "text-secondary font-dm",
-}
-
-export enum NumberDisplaySize {
-  Big = "text-4xl font-medium",
-  Small = "text-base font-normal",
-}
 
 interface NumberValueProps {
   label: number;
