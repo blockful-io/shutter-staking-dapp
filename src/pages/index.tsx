@@ -15,8 +15,12 @@ import {
   TrophyIcon,
   WalletIcon,
   GenericModal,
+  PlusIcon,
+  NumberDisplaySize,
+  ShutterCurrencySymbolStyle,
 } from "@/components";
 import { useState } from "react";
+import Avatar from "boring-avatars";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -77,8 +81,8 @@ export default function Home() {
         </CardTemplate>
 
         <div className="flex h-full flex-col w-full gap-4">
-          <div className="grid grid-cols-2 w-full h-ull gap-4">
-            <CardTemplate className="h-full flex flex-col">
+          <div className="grid grid-cols-2 w-full gap-4">
+            <CardTemplate className="flex flex-col">
               <div className="h-full p-[28px] flex flex-col justify-between">
                 <WalletIcon />
                 <div className="flex flex-col">
@@ -92,7 +96,7 @@ export default function Home() {
                 </div>
               </div>
             </CardTemplate>
-            <CardTemplate className="h-full flex flex-col">
+            <CardTemplate className="flex flex-col">
               <div className="h-full p-[28px] flex flex-col justify-between">
                 <TrophyIcon />
                 <div className="mt-1 text-base font-regular font-dm text-white">
@@ -103,14 +107,81 @@ export default function Home() {
                   <ShutterCurrencySymbol />
                 </div>
                 <IconicButton
+                  onClick={openModal}
                   icon={<ArrowUp />}
                   label="CLAIM"
-                  onClick={openModal}
                 />
               </div>
             </CardTemplate>
-            <CardTemplate className="h-full grow col-span-2 flex flex-col"></CardTemplate>
           </div>
+          <CardTemplate className="h-full grow col-span-2 flex flex-col">
+            <div className="flex justify-between items-center py-3 px-5 border-b border-primary">
+              <p>Keypers List</p>
+
+              <div>
+                <IconicButton
+                  className="py-2 px-3"
+                  icon={<PlusIcon />}
+                  onClick={() => {}}
+                  label="Delegate"
+                />
+              </div>
+            </div>
+            <div className="h-full grow">
+              <div className="grid grid-cols-2 px-6 py-4 gap-8">
+                <p className="text-gray font-dm text-xs">ADDRESS</p>
+                <p className="text-gray font-dm text-xs">STAKED AMOUNT</p>
+
+                <div className="flex gap-2 items-center justify-start font-dm">
+                  <Avatar
+                    size={25}
+                    name="Margaret Brent"
+                    variant="beam"
+                    colors={["#D4ED7A", "#40b4c4"]}
+                  />
+                  Julian.eth
+                </div>
+                <div className="flex gap-2 items-center justify-start">
+                  <NumberValue
+                    displaySize={NumberDisplaySize.Small}
+                    numberDisplayStyle={NumberDisplayStyle.PrimaryNumber}
+                    label={50000}
+                  />
+                  <ShutterCurrencySymbol
+                    style={ShutterCurrencySymbolStyle.RegularPrimary}
+                  />
+                </div>
+
+                <div className="flex gap-2 items-center justify-start font-dm">
+                  <Avatar
+                    size={25}
+                    name="Alice Paul"
+                    variant="beam"
+                    colors={["#D4ED7A", "#40b4c4"]}
+                  />
+                  Dudu.eth
+                </div>
+                <div className="flex gap-2 items-center justify-start">
+                  <NumberValue
+                    displaySize={NumberDisplaySize.Small}
+                    numberDisplayStyle={NumberDisplayStyle.PrimaryNumber}
+                    label={312830}
+                  />
+                  <ShutterCurrencySymbol
+                    style={ShutterCurrencySymbolStyle.RegularPrimary}
+                  />
+                </div>
+              </div>
+            </div>
+
+            <IconicButton
+              icon={<ArrowRight />}
+              iconPosition={IconPosition.RIGHT}
+              className="rounded-t-none"
+              label="see more"
+              onClick={() => {}}
+            />
+          </CardTemplate>
         </div>
       </div>
       <GenericModal
