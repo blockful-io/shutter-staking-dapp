@@ -1,4 +1,3 @@
-export * from "./ConnectWallet";
 export * from "./NumberValue";
 export * from "./IconicButton";
 export * from "./ShutterCurrencySymbol";
@@ -13,3 +12,5 @@ export * from "./icons/ArrowUp";
 export * from "./icons/ArrowRight";
 export * from "./icons/PlusIcon";
 export * from "./icons/TrophyIcon";
+export * from "./icons/UserIcon";
+export * from "./icons/DisconnectIcon";

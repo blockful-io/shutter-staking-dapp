@@ -1,6 +1,7 @@
 import Image from "next/image";
-import { HeightSeparator, HeaderLink, ConnectWallet } from "@/components/atoms";
+import { HeightSeparator, HeaderLink } from "@/components/atoms";
 import Link from "next/link";
+import { ConnectWallet } from "./ConnectWallet";
 
 export const DappHeader = () => {
   return (

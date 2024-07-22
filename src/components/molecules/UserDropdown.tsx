@@ -2,15 +2,14 @@ import { useState, useRef, useEffect } from "react";
 import { Address } from "viem";
 import { CardTemplate } from "../atoms";
 import { EnsProfile } from "./EnsProfile";
-import { DisconnectIcon } from "../atoms/icons/DisconnectIcon";
-import { UserIcon } from "../atoms/icons/UserIcon";
+import { DisconnectIcon, UserIcon } from "@/components/atoms";
 import { useDisconnect } from "wagmi";
 
 interface UserDropdownProps {
   address: Address;
 }
 
-const UserDropdownn = ({ address }: UserDropdownProps) => {
+const UserDropdown = ({ address }: UserDropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const disconnect = useDisconnect();
@@ -82,4 +81,4 @@ const UserDropdownn = ({ address }: UserDropdownProps) => {
   );
 };
 
-export default UserDropdownn;
+export default UserDropdown;

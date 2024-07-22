@@ -7,15 +7,11 @@ import {
 import cc from "classcat";
 import { NumberDisplaySize } from "@/types/numberDisplaySize";
 import { NumberDisplayStyle } from "@/types/numberDisplayStyle";
+import { AmountStyle } from "@/types/amountStyle";
 
 interface AmountProps extends React.HTMLProps<HTMLDivElement> {
   amount: number;
   amountStyle?: AmountStyle;
-}
-
-export enum AmountStyle {
-  Primary,
-  Secondary,
 }
 
 export const Amount = ({
