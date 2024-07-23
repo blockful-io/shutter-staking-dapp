@@ -1,7 +1,7 @@
-import { Amount, LockStatusBadge } from "@/components";
+import { CurrencyAmount, LockStatusBadge } from "@/components";
 import { DateComponent } from "../atoms/DateComponent";
 import { LockStatus } from "@/types/lockStatus";
-import { AmountStyle } from "@/types/amountStyle";
+import { CurrencyAmountStyle } from "@/types/currencyAmountStyle";
 
 export interface StakingTableRowProps {
   index?: number;
@@ -22,12 +22,12 @@ export const StakingTableRow = ({
     <>
       <p className="text-start col-span-1 text-gray">#{index}</p>
 
-      <Amount className="col-span-2" amount={amount} />
+      <CurrencyAmount className="col-span-2" amount={amount} />
 
-      <Amount
+      <CurrencyAmount
         className="col-span-2"
         amount={rewards}
-        amountStyle={AmountStyle.Secondary}
+        amountStyle={CurrencyAmountStyle.Secondary}
       />
 
       <div className="flex justify-start col-span-2 ">

@@ -31,7 +31,7 @@ export const EmptySquare: Story = {
 export const CardWithContent: Story = {
   args: {
     children: (
-      <div className="p-[28px] flex flex-col">
+      <div className="p-7 flex flex-col">
         <WalletIcon />
         <div className="mt-5 text-base font-regular font-dm text-white">
           Wallet Balance
@@ -48,7 +48,7 @@ export const CardWithContent: Story = {
 export const CardWithButton: Story = {
   args: {
     children: (
-      <div className="p-[28px] flex flex-col w-[240px]">
+      <div className="p-7 flex flex-col w-[240px]">
         <TrophyIcon />
         <div className="mt-1 text-base font-regular font-dm text-white">
           Rewards Gained

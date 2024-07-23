@@ -7,19 +7,19 @@ import {
 import cc from "classcat";
 import { NumberDisplaySize } from "@/types/numberDisplaySize";
 import { NumberDisplayStyle } from "@/types/numberDisplayStyle";
-import { AmountStyle } from "@/types/amountStyle";
+import { CurrencyAmountStyle } from "@/types/currencyAmountStyle";
 
-interface AmountProps extends React.HTMLProps<HTMLDivElement> {
+interface CurrencyAmountProps extends React.HTMLProps<HTMLDivElement> {
+  amountStyle?: CurrencyAmountStyle;
   amount: number;
-  amountStyle?: AmountStyle;
 }
 
-export const Amount = ({
-  amountStyle = AmountStyle.Primary,
+export const CurrencyAmount = ({
+  amountStyle = CurrencyAmountStyle.Primary,
   amount,
   className,
   ...divProps
-}: AmountProps) => {
+}: CurrencyAmountProps) => {
   return (
     <div
       className={cc(["flex gap-1 items-center justify-start", className])}
@@ -28,7 +28,7 @@ export const Amount = ({
       <NumberValue
         displaySize={NumberDisplaySize.Small}
         numberDisplayStyle={
-          amountStyle === AmountStyle.Primary
+          amountStyle === CurrencyAmountStyle.Primary
             ? NumberDisplayStyle.PrimaryNumber
             : NumberDisplayStyle.SecondaryNumber
         }
@@ -36,7 +36,7 @@ export const Amount = ({
       />
       <ShutterCurrencySymbol
         style={
-          amountStyle === AmountStyle.Primary
+          amountStyle === CurrencyAmountStyle.Primary
             ? ShutterCurrencySymbolStyle.RegularPrimary
             : ShutterCurrencySymbolStyle.RegularSecondary
         }

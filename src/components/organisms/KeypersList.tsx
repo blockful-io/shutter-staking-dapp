@@ -3,7 +3,7 @@ import {
   CardTemplate,
   IconicButton,
   PlusIcon,
-  Amount,
+  CurrencyAmount,
   EnsProfile,
 } from "@/components";
 import { IconPosition } from "@/types/iconPosition";
@@ -17,7 +17,7 @@ export const KeypersList = () => {
         <div>
           <IconicButton
             icon={<PlusIcon />}
-            className=" py-2 px-3"
+            className="py-2 px-3"
             label="Delegate"
             onClick={() => {}}
           />
@@ -29,10 +29,10 @@ export const KeypersList = () => {
           <p className="text-gray font-dm text-xs">STAKED AMOUNT</p>
 
           <EnsProfile address="0x225f137127d9067788314bc7fcc1f36746a3c3B5" />
-          <Amount amount={50000} />
+          <CurrencyAmount amount={50000} />
 
           <EnsProfile address="0xd0B6B13546f28AD8a083FcbaA3DC174fFBC46B75" />
-          <Amount amount={123000} />
+          <CurrencyAmount amount={123000} />
         </div>
       </div>
 
