@@ -37,7 +37,7 @@ const UserDropdown = ({ address }: UserDropdownProps) => {
           setIsOpen(!isOpen);
         }}
       >
-        <CardTemplate className="p-2">
+        <CardTemplate className="p-2 text-gray">
           <EnsProfile address={address} />
         </CardTemplate>
       </button>

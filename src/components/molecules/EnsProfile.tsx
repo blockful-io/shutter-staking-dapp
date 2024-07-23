@@ -51,22 +51,32 @@ export const EnsProfile = ({ address }: EnsProfileProps) => {
   }, [address]);
 
   if (user.isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="flex gap-2 items-center">
+        <div className="animate-pulse rounded-full bg-gray w-[25px] h-[25px]"></div>
+        <div className="animate-pulse bg-gray h-3 w-32 rounded-md"></div>
+      </div>
+    );
   }
 
   return (
-    <div className="flex gap-2 items-center justify-start font-dm">
+    <div className="flex gap-2 items-center justify-start font-dm text-base">
       {user.avatar ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
-          className="rounded-full"
           width={25}
           height={25}
           alt="profile"
           src={user.avatar}
+          className="rounded-full"
         />
       ) : (
-        <Avatar size={25} name="Alice Paul" variant="beam" />
+        <Avatar
+          size={25}
+          variant="beam"
+          name="Alice Paul"
+          colors={["#D4ED7A", "rgba(212, 237, 122, 0.12)"]}
+        />
       )}
       {user.name ? user.name : ellipseAddress(address)}
     </div>
