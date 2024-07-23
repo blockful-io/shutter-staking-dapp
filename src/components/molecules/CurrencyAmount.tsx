@@ -8,22 +8,22 @@ import {
 } from "@/components/atoms";
 import cc from "classcat";
 
-interface AmountProps extends React.HTMLProps<HTMLDivElement> {
+interface CurrencyAmountProps extends React.HTMLProps<HTMLDivElement> {
+  amountStyle?: CurrencyAmountStyle;
   amount: number;
-  amountStyle?: AmountStyle;
 }
 
-export enum AmountStyle {
+export enum CurrencyAmountStyle {
   Primary,
   Secondary,
 }
 
-export const Amount = ({
-  amountStyle = AmountStyle.Primary,
+export const CurrencyAmount = ({
+  amountStyle = CurrencyAmountStyle.Primary,
   amount,
   className,
   ...divProps
-}: AmountProps) => {
+}: CurrencyAmountProps) => {
   return (
     <div
       className={cc(["flex gap-1 items-center justify-start", className])}
@@ -32,7 +32,7 @@ export const Amount = ({
       <NumberValue
         displaySize={NumberDisplaySize.Small}
         numberDisplayStyle={
-          amountStyle === AmountStyle.Primary
+          amountStyle === CurrencyAmountStyle.Primary
             ? NumberDisplayStyle.PrimaryNumber
             : NumberDisplayStyle.SecondaryNumber
         }
@@ -40,7 +40,7 @@ export const Amount = ({
       />
       <ShutterCurrencySymbol
         style={
-          amountStyle === AmountStyle.Primary
+          amountStyle === CurrencyAmountStyle.Primary
             ? ShutterCurrencySymbolStyle.RegularPrimary
             : ShutterCurrencySymbolStyle.RegularSecondary
         }

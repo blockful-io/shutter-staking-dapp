@@ -1,10 +1,10 @@
 import {
+  PlusIcon,
   ArrowRight,
   CardTemplate,
   IconicButton,
   IconPosition,
-  PlusIcon,
-  Amount,
+  CurrencyAmount,
 } from "@/components";
 import Avatar from "boring-avatars";
 
@@ -33,14 +33,14 @@ export const KeypersList = () => {
             Julian.eth
           </div>
 
-          <Amount amount={50000} />
+          <CurrencyAmount amount={50000} />
 
           <div className="flex gap-2 items-center justify-start font-dm">
             <Avatar size={25} name="Alice Paul" variant="beam" />
             Dudu.eth
           </div>
 
-          <Amount amount={123000} />
+          <CurrencyAmount amount={123000} />
         </div>
       </div>
 
