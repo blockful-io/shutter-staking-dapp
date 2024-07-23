@@ -8,7 +8,7 @@ import {
 export const WalletBalance = () => {
   return (
     <CardTemplate className="flex flex-col">
-      <div className="h-full p-[28px] flex flex-col justify-between">
+      <div className="h-full p-7 flex flex-col justify-between">
         <WalletIcon />
         <div className="flex flex-col">
           <div className="mt-5 text-base font-regular font-dm text-white">

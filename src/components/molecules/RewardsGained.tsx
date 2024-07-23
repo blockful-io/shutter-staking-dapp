@@ -14,7 +14,7 @@ interface RewardsGainedProps {
 export const RewardsGained = ({ onButtonClick }: RewardsGainedProps) => {
   return (
     <CardTemplate className="flex flex-col">
-      <div className="h-full p-[28px] flex flex-col justify-between">
+      <div className="h-full p-7 flex flex-col justify-between">
         <TrophyIcon />
         <div className="mt-1 text-base font-regular font-dm text-white">
           Rewards Gained

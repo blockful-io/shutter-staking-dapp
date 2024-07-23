@@ -17,7 +17,7 @@ export const KeypersList = () => {
         <div>
           <IconicButton
             icon={<PlusIcon />}
-            className=" py-2 px-3"
+            className="py-2 px-3"
             label="Delegate"
             onClick={() => {}}
           />
