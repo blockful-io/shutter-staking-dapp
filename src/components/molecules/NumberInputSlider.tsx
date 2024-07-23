@@ -1,10 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-import {
-  NumberDisplaySize,
-  NumberDisplayStyle,
-  NumberValue,
-  ShutterCurrencySymbol,
-} from "../atoms";
+import { NumberValue, ShutterCurrencySymbol } from "../atoms";
+import { NumberDisplaySize } from "@/types/numberDisplaySize";
+import { NumberDisplayStyle } from "@/types/numberDisplayStyle";
 
 const MAX_VALUE = 13500;
 

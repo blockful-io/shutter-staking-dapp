@@ -1,8 +1,6 @@
-import {
-  NumberDisplaySize,
-  NumberValue,
-  NumberDisplayStyle,
-} from "@/components/atoms";
+import { NumberValue } from "@/components/atoms";
+import { NumberDisplaySize } from "@/types/numberDisplaySize";
+import { NumberDisplayStyle } from "@/types/numberDisplayStyle";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta = {

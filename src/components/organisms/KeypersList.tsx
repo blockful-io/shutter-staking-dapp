@@ -1,12 +1,12 @@
 import {
-  PlusIcon,
   ArrowRight,
   CardTemplate,
   IconicButton,
-  IconPosition,
+  PlusIcon,
   CurrencyAmount,
+  EnsProfile,
 } from "@/components";
-import Avatar from "boring-avatars";
+import { IconPosition } from "@/types/iconPosition";
 
 export const KeypersList = () => {
   return (
@@ -28,18 +28,10 @@ export const KeypersList = () => {
           <p className="text-gray font-dm text-xs">ADDRESS</p>
           <p className="text-gray font-dm text-xs">STAKED AMOUNT</p>
 
-          <div className="flex gap-2 items-center justify-start font-dm">
-            <Avatar size={25} name="Margaret Brent" variant="beam" />
-            Julian.eth
-          </div>
-
+          <EnsProfile address="0x225f137127d9067788314bc7fcc1f36746a3c3B5" />
           <CurrencyAmount amount={50000} />
 
-          <div className="flex gap-2 items-center justify-start font-dm">
-            <Avatar size={25} name="Alice Paul" variant="beam" />
-            Dudu.eth
-          </div>
-
+          <EnsProfile address="0xd0B6B13546f28AD8a083FcbaA3DC174fFBC46B75" />
           <CurrencyAmount amount={123000} />
         </div>
       </div>

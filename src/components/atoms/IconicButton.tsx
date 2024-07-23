@@ -1,9 +1,5 @@
+import { IconPosition } from "@/types/iconPosition";
 import cc from "classcat";
-
-export enum IconPosition {
-  LEFT = "left",
-  RIGHT = "right",
-}
 
 interface IconicButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {

@@ -1,4 +1,4 @@
-import { LockStatus } from "../atoms";
+import { LockStatus } from "@/types/lockStatus";
 import { StakingTableRow, StakingTableRowProps } from "../organisms";
 import { StakingTableHead } from "./StakingTableHead";
 

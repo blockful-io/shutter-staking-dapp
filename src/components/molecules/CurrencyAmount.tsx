@@ -1,21 +1,17 @@
 import React from "react";
 import {
-  NumberDisplaySize,
-  NumberDisplayStyle,
   NumberValue,
   ShutterCurrencySymbol,
   ShutterCurrencySymbolStyle,
 } from "@/components/atoms";
 import cc from "classcat";
+import { NumberDisplaySize } from "@/types/numberDisplaySize";
+import { NumberDisplayStyle } from "@/types/numberDisplayStyle";
+import { CurrencyAmountStyle } from "@/types/currencyAmountStyle";
 
 interface CurrencyAmountProps extends React.HTMLProps<HTMLDivElement> {
   amountStyle?: CurrencyAmountStyle;
   amount: number;
-}
-
-export enum CurrencyAmountStyle {
-  Primary,
-  Secondary,
 }
 
 export const CurrencyAmount = ({

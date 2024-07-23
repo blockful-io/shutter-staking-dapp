@@ -1,10 +1,7 @@
-import {
-  LockStatus,
-  CurrencyAmount,
-  LockStatusBadge,
-  CurrencyAmountStyle,
-} from "@/components";
+import { CurrencyAmount, LockStatusBadge } from "@/components";
 import { DateComponent } from "../atoms/DateComponent";
+import { LockStatus } from "@/types/lockStatus";
+import { CurrencyAmountStyle } from "@/types/currencyAmountStyle";
 
 export interface StakingTableRowProps {
   index?: number;

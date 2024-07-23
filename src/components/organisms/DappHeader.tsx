@@ -1,10 +1,11 @@
 import Image from "next/image";
-import { HeightSeparator, HeaderLink, ConnectWallet } from "@/components/atoms";
+import { HeightSeparator, HeaderLink } from "@/components/atoms";
 import Link from "next/link";
+import { ConnectWallet } from "./ConnectWallet";
 
 export const DappHeader = () => {
   return (
-    <div className="w-screen flex items-stretch mx-auto p-6 max-w-[1216px] justify-between">
+    <div className="w-screen flex items-center mx-auto p-6 max-w-[1216px] h-[91px] justify-between">
       <div className="flex items-center gap-6">
         <Link href="/">
           <Image

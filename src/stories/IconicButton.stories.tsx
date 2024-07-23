@@ -1,9 +1,5 @@
-import {
-  ArrowDown,
-  IconPosition,
-  IconicButton,
-  PlusIcon,
-} from "@/components/atoms";
+import { ArrowDown, IconicButton, PlusIcon } from "@/components/atoms";
+import { IconPosition } from "@/types/iconPosition";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
