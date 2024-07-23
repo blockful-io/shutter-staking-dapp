@@ -1,11 +1,8 @@
 import {
   LockStatus,
+  CurrencyAmount,
   LockStatusBadge,
-  NumberDisplaySize,
-  NumberDisplayStyle,
-  NumberValue,
-  ShutterCurrencySymbol,
-  ShutterCurrencySymbolStyle,
+  CurrencyAmountStyle,
 } from "@/components";
 import { DateComponent } from "../atoms/DateComponent";
 
@@ -27,21 +24,14 @@ export const StakingTableRow = ({
   return (
     <>
       <p className="text-start col-span-1 text-gray">#{index}</p>
-      <div className="flex gap-1 justify-start col-span-2 ">
-        <NumberValue displaySize={NumberDisplaySize.Small} label={amount} />
-        <ShutterCurrencySymbol />
-      </div>
 
-      <div className="flex gap-1 justify-start col-span-2 text-secondary">
-        <NumberValue
-          displaySize={NumberDisplaySize.Small}
-          numberDisplayStyle={NumberDisplayStyle.SecondaryNumber}
-          label={rewards}
-        />
-        <ShutterCurrencySymbol
-          style={ShutterCurrencySymbolStyle.RegularSecondary}
-        />
-      </div>
+      <CurrencyAmount className="col-span-2" amount={amount} />
+
+      <CurrencyAmount
+        className="col-span-2"
+        amount={rewards}
+        amountStyle={CurrencyAmountStyle.Secondary}
+      />
 
       <div className="flex justify-start col-span-2 ">
         <LockStatusBadge status={status} />
