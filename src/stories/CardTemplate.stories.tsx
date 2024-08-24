@@ -51,7 +51,7 @@ export const CardWithButton: Story = {
       <div className="p-7 flex flex-col w-[240px]">
         <TrophyIcon />
         <div className="mt-1 text-base font-regular font-dm text-white">
-          Rewards Gained
+          Rewards Available
         </div>
         <div className="flex space-x-1 items-end mt-1 mb-4">
           <NumberValue label={1100} />

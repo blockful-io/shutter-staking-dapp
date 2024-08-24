@@ -1,4 +1,4 @@
 export enum NumberDisplayStyle {
   PrimaryNumber = "text-primary font-dm",
-  SecondaryNumber = "text-secondary font-dm",
+  SecondaryNumber = "text-brandColor font-dm",
 }

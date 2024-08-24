@@ -67,12 +67,7 @@ const wagmiConfig = createConfig({
   ssr: false,
 });
 
-// Create a app config for Siwe (Wallet Authentication)
-const getSiweMessageOptions = () => ({
-  statement: "Connect to Shutter Staking dApp",
-});
-
 // Create the query client for React Query
 const queryClient = new QueryClient();
 
-export { wagmiConfig, getSiweMessageOptions, queryClient };
+export { wagmiConfig, queryClient };

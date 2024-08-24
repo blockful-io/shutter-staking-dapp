@@ -12,4 +12,8 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const NumberInputControlledByTextAndSlider: Story = {};
+export const NumberInputControlledByTextAndSlider: Story = {
+  args: {
+    onAmountChange: (amount: number) => {},
+  },
+};

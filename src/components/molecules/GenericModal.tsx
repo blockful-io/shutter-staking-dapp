@@ -1,22 +1,32 @@
 import cc from "classcat";
 import { IconicButton } from "../atoms";
+import { BlockchainCTA } from "./BlockchainCta";
+import { TransactionErrorType } from "@/lib/wallet/txError";
 
 interface ModalProps {
   title: string;
-  onMainCtaClick: () => void;
-  buttonLabel: string;
   isOpen: boolean;
   onClose: () => void;
+  buttonLabel?: string;
   children: JSX.Element;
+  communicateMainCtaTxSuccess: () => void;
+  onMainCtaClick: () => Promise<`0x${string}` | TransactionErrorType>;
+
+  /*
+    For each TransactionErrorType, you can define a custom error message to be displayed.
+  */
+  customErrorMessages?: Partial<Record<TransactionErrorType, string>>;
 }
 
 export const GenericModal = ({
+  title,
   isOpen,
   onClose,
   children,
-  title,
-  onMainCtaClick,
   buttonLabel,
+  onMainCtaClick,
+  customErrorMessages,
+  communicateMainCtaTxSuccess,
 }: ModalProps) => {
   return (
     <div
@@ -45,11 +55,15 @@ export const GenericModal = ({
         <div className="p-5">{children}</div>
 
         <div className="p-5">
-          <IconicButton
-            label={buttonLabel}
-            onClick={onMainCtaClick}
-            className="bg-yellow !text-brandBlack hover:bg-yellow hover:brightness-110 !rounded-full"
-          />
+          {buttonLabel ? (
+            <IconicButton label={buttonLabel} onClick={onMainCtaClick} />
+          ) : (
+            <BlockchainCTA
+              transactionRequest={onMainCtaClick}
+              onSuccess={communicateMainCtaTxSuccess}
+              customErrorMessages={customErrorMessages}
+            />
+          )}
         </div>
       </div>
     </div>

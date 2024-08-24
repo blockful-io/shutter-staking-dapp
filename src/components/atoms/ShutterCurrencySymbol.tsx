@@ -7,8 +7,8 @@ interface SymbolProps {
 export enum ShutterCurrencySymbolStyle {
   HighlightedPrimary = "text-primary text-base font-bold",
   RegularPrimary = "text-primary font-normal text-base",
-  RegularSecondary = "text-secondary font-normal text-base",
-  HighlightedSecondary = "text-secondary font-bold text-base",
+  RegularSecondary = "text-brandColor font-normal text-base",
+  HighlightedSecondary = "text-brandColor font-bold text-base",
 }
 
 export const ShutterCurrencySymbol = ({

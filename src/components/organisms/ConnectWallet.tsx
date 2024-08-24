@@ -1,26 +1,26 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import { Address } from "viem";
 import UserDropdown from "../molecules/UserDropdown";
+import cc from "classcat";
+import { useUser } from "@/lib/client/useUser";
 
-export const ConnectWallet = () => {
+interface ConnectWalletProps {
+  customClassNames?: string;
+}
+
+export const ConnectWallet = ({
+  customClassNames = "",
+}: ConnectWalletProps) => {
+  const { address } = useUser();
   return (
     <ConnectButton.Custom>
-      {({
-        account,
-        chain,
-        openChainModal,
-        openConnectModal,
-        authenticationStatus,
-        mounted,
-      }) => {
-        const ready = mounted && authenticationStatus !== "loading";
-        const connected =
-          ready && account && chain && authenticationStatus === "authenticated";
-
-        if (!connected) {
+      {({ chain, openChainModal, openConnectModal }) => {
+        if (!address) {
           return (
             <button
-              className="text-xs text-black font-semibold bg-green p-2 px-3 rounded-full"
+              className={cc([
+                "text-xs text-white font-semibold bg-brandColor p-2 px-3 rounded-full",
+                customClassNames,
+              ])}
               onClick={(e: any) => {
                 openConnectModal();
                 e.preventDefault();
@@ -33,7 +33,7 @@ export const ConnectWallet = () => {
 
         const unsupportedChainClassName = `text-white inline-flex w-auto flex-shrink-0 appearance-none items-center justify-center space-x-2 rounded-md px-5 py-2.5`;
 
-        if (chain.unsupported) {
+        if (chain?.unsupported) {
           return (
             <button
               onClick={(e: any) => {
@@ -43,7 +43,7 @@ export const ConnectWallet = () => {
               type="button"
               className={unsupportedChainClassName}
             >
-              <span className="flex-shrink-0 text-xs text-black font-semibold bg-green p-2 px-3 rounded-full">
+              <span className="flex-shrink-0 text-xs text-black font-semibold bg-brandColor p-2 px-3 rounded-full">
                 Unsupported network
               </span>
             </button>
@@ -52,7 +52,7 @@ export const ConnectWallet = () => {
 
         return (
           <div style={{ display: "flex", gap: 12 }}>
-            <UserDropdown address={account.address as Address} />
+            <UserDropdown address={address} />
           </div>
         );
       }}

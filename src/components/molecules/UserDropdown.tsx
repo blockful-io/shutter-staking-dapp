@@ -1,12 +1,11 @@
 import { useState, useRef, useEffect } from "react";
-import { Address } from "viem";
 import { CardTemplate } from "../atoms";
 import { EnsProfile } from "./EnsProfile";
 import { DisconnectIcon, UserIcon } from "@/components/atoms";
 import { useDisconnect } from "wagmi";
 
 interface UserDropdownProps {
-  address: Address;
+  address: `0x${string}`;
 }
 
 const UserDropdown = ({ address }: UserDropdownProps) => {

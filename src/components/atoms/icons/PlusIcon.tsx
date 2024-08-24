@@ -1,4 +1,4 @@
-const DEFAULT_COLOR = "#D4ED7A";
+const DEFAULT_COLOR = "rgb(35,87,174)";
 
 export const PlusIcon = ({ fill = DEFAULT_COLOR }) => {
   return (

@@ -15,7 +15,7 @@ export const NumberValue = ({
   ...props
 }: NumberValueProps) => {
   return (
-    <p {...props} className={cc([numberDisplayStyle, displaySize])}>
+    <p {...props} className={cc([numberDisplayStyle, displaySize, "truncate"])}>
       {new Intl.NumberFormat("en-US", {
         style: "decimal",
         currency: "USD",

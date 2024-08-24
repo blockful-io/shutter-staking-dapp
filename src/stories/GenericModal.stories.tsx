@@ -18,8 +18,9 @@ const meta = {
     children: <></>,
     isOpen: true,
     onClose: () => {},
-    onMainCtaClick: () => {},
     buttonLabel: "stake",
+    communicateMainCtaTxSuccess: () => {},
+    onMainCtaClick: () => new Promise((res, rej) => res("0x")),
   },
 } satisfies Meta<typeof GenericModal>;
 
@@ -32,7 +33,7 @@ export const ModalWithContent: Story = {
   args: {
     children: (
       <div>
-        <NumberInputSlider />
+        <NumberInputSlider onAmountChange={() => {}} />
       </div>
     ),
   },
@@ -58,7 +59,7 @@ export const ModalWithCustomActionOnClose: Story = {
 
 export const ModalWithCustomActionOnCtaClick: Story = {
   args: {
-    onMainCtaClick: () => alert("Stake action executed"),
+    onMainCtaClick: () => new Promise(() => alert("Stake action executed")),
   },
 };
 

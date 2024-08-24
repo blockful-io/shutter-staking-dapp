@@ -1,42 +1,59 @@
-import { CurrencyAmount, LockStatusBadge } from "@/components";
+import {
+  ArrowDown,
+  CurrencyAmount,
+  EnsProfile,
+  IconicButton,
+  LockStatusBadge,
+} from "@/components";
 import { DateComponent } from "../atoms/DateComponent";
+import { FormattedStake } from "@/types/formattedStake";
 import { LockStatus } from "@/types/lockStatus";
-import { CurrencyAmountStyle } from "@/types/currencyAmountStyle";
-
-export interface StakingTableRowProps {
-  index?: number;
-  amount: number;
-  rewards: number;
-  status: LockStatus;
-  unlockDate: number;
+import toast from "react-hot-toast";
+import cc from "classcat";
+interface StakingTableRowProps {
+  stake: FormattedStake;
+  openUnstakeModal: (stake: FormattedStake) => void;
 }
 
 export const StakingTableRow = ({
-  index,
-  amount,
-  rewards,
-  status,
-  unlockDate,
+  stake,
+  openUnstakeModal,
 }: StakingTableRowProps) => {
   return (
     <>
-      <p className="text-start col-span-1 text-gray">#{index}</p>
+      <CurrencyAmount className="col-span-2 truncate" amount={stake.amount} />
 
-      <CurrencyAmount className="col-span-2" amount={amount} />
+      <div className="flex col-span-3">
+        <EnsProfile address={stake.keyper} />
+      </div>
 
-      <CurrencyAmount
-        className="col-span-2"
-        amount={rewards}
-        amountStyle={CurrencyAmountStyle.Secondary}
-      />
-
-      <div className="flex justify-start col-span-2 ">
-        <LockStatusBadge status={status} />
+      <div className="flex justify-start col-span-2">
+        <LockStatusBadge status={stake.status} />
       </div>
 
       <p className="text-start col-span-2 text-gray-400">
-        <DateComponent timestamp={unlockDate} />
+        <DateComponent timestamp={stake.unlockDate} />
       </p>
+
+      <div className="col-span-2 w-[110px]">
+        <IconicButton
+          className={cc([
+            "text-xs border-none !px-3 !w-auto",
+            {
+              "cursor-not-allowed": stake.status === LockStatus.LOCKED,
+            },
+          ])}
+          onClick={() => {
+            if (stake.status === LockStatus.LOCKED) {
+              toast.error("It is not possible to unstake a locked stake");
+            } else {
+              openUnstakeModal(stake);
+            }
+          }}
+          icon={<ArrowDown />}
+          label="UNSTAKE"
+        />
+      </div>
     </>
   );
 };

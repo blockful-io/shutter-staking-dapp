@@ -1,10 +1,10 @@
-import { Address } from "viem";
 import { useEffect, useState } from "react";
 import { normalize } from "viem/ens";
 import { publicClient } from "@/lib/wallet/wallet-config";
 import { getName } from "@ensdomains/ensjs/public";
 import Avatar from "boring-avatars";
 import { getEnsAvatar } from "viem/actions";
+import cc from "classcat";
 
 interface UserState {
   avatar: string | null;
@@ -13,10 +13,14 @@ interface UserState {
 }
 
 interface EnsProfileProps {
-  address: Address;
+  address: `0x${string}`;
+  displayExtendedAddress?: boolean;
 }
 
-export const EnsProfile = ({ address }: EnsProfileProps) => {
+export const EnsProfile = ({
+  address,
+  displayExtendedAddress,
+}: EnsProfileProps) => {
   const [user, setUser] = useState<UserState>({
     avatar: null,
     name: null,
@@ -54,7 +58,15 @@ export const EnsProfile = ({ address }: EnsProfileProps) => {
     return (
       <div className="flex gap-2 items-center">
         <div className="animate-pulse rounded-full bg-gray w-[25px] h-[25px]"></div>
-        <div className="animate-pulse bg-gray h-3 w-32 rounded-md"></div>
+        <div
+          className={cc([
+            "animate-pulse bg-gray h-3 rounded-md",
+            {
+              "w-32": !displayExtendedAddress,
+              "w-80": displayExtendedAddress,
+            },
+          ])}
+        ></div>
       </div>
     );
   }
@@ -75,17 +87,22 @@ export const EnsProfile = ({ address }: EnsProfileProps) => {
           size={25}
           variant="beam"
           name="Alice Paul"
-          colors={["#D4ED7A", "rgba(212, 237, 122, 0.12)"]}
+          colors={["rgba(0,68,164, 1)", "rgba(212, 237, 122, 0.12)"]}
         />
       )}
-      {user.name ? user.name : ellipseAddress(address)}
+      {user.name ? user.name : ellipseAddress(address, displayExtendedAddress)}
     </div>
   );
 };
 
-function ellipseAddress(address: string, width: number = 10): string {
+function ellipseAddress(
+  address: string,
+  displayExtendedAddress = false
+): string {
   if (!address) {
     return "";
   }
-  return `${address.slice(0, 6)}...${address.slice(-4)}`;
+  return displayExtendedAddress
+    ? `${address.slice(0, 14)}...${address.slice(-20)}`
+    : `${address.slice(0, 6)}...${address.slice(-4)}`;
 }

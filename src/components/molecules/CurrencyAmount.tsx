@@ -11,22 +11,24 @@ import { CurrencyAmountStyle } from "@/types/currencyAmountStyle";
 
 interface CurrencyAmountProps extends React.HTMLProps<HTMLDivElement> {
   amountStyle?: CurrencyAmountStyle;
+  displaySize?: NumberDisplaySize;
   amount: number;
 }
 
 export const CurrencyAmount = ({
   amountStyle = CurrencyAmountStyle.Primary,
+  displaySize = NumberDisplaySize.Small,
   amount,
   className,
   ...divProps
 }: CurrencyAmountProps) => {
   return (
     <div
-      className={cc(["flex gap-1 items-center justify-start", className])}
+      className={cc(["flex gap-1 items-end justify-start", className])}
       {...divProps}
     >
       <NumberValue
-        displaySize={NumberDisplaySize.Small}
+        displaySize={displaySize}
         numberDisplayStyle={
           amountStyle === CurrencyAmountStyle.Primary
             ? NumberDisplayStyle.PrimaryNumber
