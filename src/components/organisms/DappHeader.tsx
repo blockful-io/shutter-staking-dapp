@@ -16,7 +16,7 @@ export const DappHeader = () => {
           />
         </Link>
         <HeightSeparator />
-        <HeaderLink href="" label="DAOs" />
+        <HeaderLink href="" label="DAO" />
         <HeaderLink href="" label="Docs" />
         <HeaderLink href="" label="Forum" />
       </div>
