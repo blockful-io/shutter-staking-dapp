@@ -16,9 +16,18 @@ export const DappHeader = () => {
           />
         </Link>
         <HeightSeparator />
-        <HeaderLink href="" label="DAO" />
-        <HeaderLink href="" label="Docs" />
-        <HeaderLink href="" label="Forum" />
+        <HeaderLink
+          href="https://app.decentdao.org/home?dao=eth:0x36bD3044ab68f600f6d3e081056F34f2a58432c4"
+          label="DAO"
+        />
+        <HeaderLink
+          href="https://github.com/blockful-io/shutter-staking/tree/main/docs"
+          label="Docs"
+        />
+        <HeaderLink
+          href="https://shutternetwork.discourse.group/"
+          label="Forum"
+        />
       </div>
 
       <ConnectWallet />
